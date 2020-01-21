@@ -10,6 +10,7 @@ let galleryThumbs = new Swiper('.gallery-thumbs', {
       slidesPerView: 5
     }
   },
+  allowTouchMove: false,
   navigation: {
     nextEl: '.gallery__btn--next',
     prevEl: '.gallery__btn--prev',

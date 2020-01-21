@@ -3,8 +3,8 @@
     const header = document.querySelector('[data-header]');
     const navTrigger = header.querySelector('[data-menu-trigger]');
     const navContainer = header.querySelector('[data-menu-container]');
-    const submenuTriggers = [...header.querySelectorAll('[data-submenu-trigger]')];
-    const submenuContainers = [...header.querySelectorAll('[data-submenu-trigger] + [data-submenu-container]')];
+    const submenuTriggers = header.querySelectorAll('[data-submenu-trigger]');
+    const submenuContainers = header.querySelectorAll('[data-submenu-trigger] + [data-submenu-container]');
 
     // JS operation on menuContainer height to make it available for transition-duration css prop
     function toggleMenuCollapse (menuContainer, collapseTrigger) {
@@ -23,12 +23,12 @@
       });
     }
     // creation of event listeners for submenu toggle
-    submenuTriggers.forEach((trigger, index) => {
+    submenuTriggers.forEach(function (trigger, index) {
       toggleMenuCollapse(submenuContainers[index], trigger);
     });
 
     // creation of event listeners for menu toggle
-    navTrigger.addEventListener('click', () => {
+    navTrigger.addEventListener('click', function () {
       navContainer.classList.toggle('nav--opened');
     });
   }

@@ -25,11 +25,11 @@ let galleryTop = new Swiper('.gallery-top', {
 });
 
 // Get images array and save first image src
-const images = [...document.querySelectorAll('[data-product-image]')];
+const images = document.querySelectorAll('[data-product-image]');
 let activeImgSrc = images[0].src;
 
 // Switch saved src to use in lightbox js trigger on button click
-galleryTop.on('slideChange', () => {
+galleryTop.on('slideChange', function () {
   activeImgSrc = images[galleryTop.activeIndex].src;
 });
 
@@ -38,7 +38,7 @@ let lightbox = new Lightbox();
 lightbox.load();
 
 // Open lightbox on btn click with previously saved active image src
-document.querySelector('[data-lightbox-trigger]').addEventListener('click', () => {
+document.querySelector('[data-lightbox-trigger]').addEventListener('click', function () {
   lightbox.open(activeImgSrc);
 });
 

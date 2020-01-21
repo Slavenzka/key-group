@@ -1,6 +1,6 @@
 {
   if (window.matchMedia('(min-width: 1200px)').matches) {
-    const galleryItems = [...document.querySelectorAll('.gallery__item')];
+    const galleryItems = document.querySelectorAll('.gallery__item');
 
     function move (evt, start) {
       const shift = {
@@ -17,10 +17,10 @@
       evt.target.style.top = shift.y + "px";
     }
 
-    galleryItems.forEach(item => {
+    galleryItems.forEach(function (item) {
       const image = item.querySelector('[data-product-image]');
 
-      image.addEventListener('mouseenter', evt => {
+      image.addEventListener('mouseenter', function (evt) {
         image.style.transform = 'Scale(1.2)';
         image.style.transitionDuration = '0.5s';
         image.style.transitionProperty = 'transform';
@@ -32,11 +32,13 @@
           y: evt.clientY
         }
 
-        const handleMove = evt => move(evt, startCoords);
+        const handleMove = function (evt) {
+          move(evt, startCoords);
+        }
 
         image.addEventListener('mousemove', handleMove);
 
-        image.addEventListener('mouseleave', () => {
+        image.addEventListener('mouseleave', function () {
           image.style.transform = 'Scale(1)';
           image.style.top = '0';
           image.style.left = '0';

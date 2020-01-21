@@ -26,22 +26,22 @@ let galleryTop = new Swiper('.gallery-top', {
 });
 
 // Get images array and save first image src
-const images = [...document.querySelectorAll('[data-product-image]')];
+const images = document.querySelectorAll('[data-product-image]');
 let activeImgSrc = images[0].src;
 
 // Switch saved src to use in lightbox js trigger on button click
-galleryTop.on('slideChange', () => {
+galleryTop.on('slideChange', (function () {
   activeImgSrc = images[galleryTop.activeIndex].src;
-});
+}));
 
 // Init lightbox
 let lightbox = new Lightbox();
 lightbox.load();
 
 // Open lightbox on btn click with previously saved active image src
-document.querySelector('[data-lightbox-trigger]').addEventListener('click', () => {
+document.querySelector('[data-lightbox-trigger]').addEventListener('click', (function () {
   lightbox.open(activeImgSrc);
-});
+}));
 
 
 /**
@@ -105,8 +105,8 @@ Function.prototype.throttle = function (milliseconds, context) {
     const header = document.querySelector('[data-header]');
     const navTrigger = header.querySelector('[data-menu-trigger]');
     const navContainer = header.querySelector('[data-menu-container]');
-    const submenuTriggers = [...header.querySelectorAll('[data-submenu-trigger]')];
-    const submenuContainers = [...header.querySelectorAll('[data-submenu-trigger] + [data-submenu-container]')];
+    const submenuTriggers = header.querySelectorAll('[data-submenu-trigger]');
+    const submenuContainers = header.querySelectorAll('[data-submenu-trigger] + [data-submenu-container]');
 
     // JS operation on menuContainer height to make it available for transition-duration css prop
     function toggleMenuCollapse (menuContainer, collapseTrigger) {
@@ -125,20 +125,20 @@ Function.prototype.throttle = function (milliseconds, context) {
       }));
     }
     // creation of event listeners for submenu toggle
-    submenuTriggers.forEach((trigger, index) => {
+    submenuTriggers.forEach((function (trigger, index) {
       toggleMenuCollapse(submenuContainers[index], trigger);
-    });
+    }));
 
     // creation of event listeners for menu toggle
-    navTrigger.addEventListener('click', () => {
+    navTrigger.addEventListener('click', (function () {
       navContainer.classList.toggle('nav--opened');
-    });
+    }));
   }
 }
 
 {
   if (window.matchMedia('(min-width: 1200px)').matches) {
-    const galleryItems = [...document.querySelectorAll('.gallery__item')];
+    const galleryItems = document.querySelectorAll('.gallery__item');
 
     function move (evt, start) {
       const shift = {
@@ -155,10 +155,10 @@ Function.prototype.throttle = function (milliseconds, context) {
       evt.target.style.top = shift.y + "px";
     }
 
-    galleryItems.forEach(item => {
+    galleryItems.forEach((function (item) {
       const image = item.querySelector('[data-product-image]');
 
-      image.addEventListener('mouseenter', evt => {
+      image.addEventListener('mouseenter', (function (evt) {
         image.style.transform = 'Scale(1.2)';
         image.style.transitionDuration = '0.5s';
         image.style.transitionProperty = 'transform';
@@ -170,20 +170,22 @@ Function.prototype.throttle = function (milliseconds, context) {
           y: evt.clientY
         }
 
-        const handleMove = evt => move(evt, startCoords);
+        const handleMove = function (evt) {
+          move(evt, startCoords);
+        }
 
         image.addEventListener('mousemove', handleMove);
 
-        image.addEventListener('mouseleave', () => {
+        image.addEventListener('mouseleave', (function () {
           image.style.transform = 'Scale(1)';
           image.style.top = '0';
           image.style.left = '0';
           image.style.transitionProperty = 'transform, left, top';
 
           image.removeEventListener('mousemove', handleMove);
-        });
-      });
-    });
+        }));
+      }));
+    }));
   }
 }
 

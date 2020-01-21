@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.min.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/swiper.min.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/lightbox.min.css">
+  <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="assets/libs/ie11CustomProperties.js"><\x2fscript>');</script>
 </head>
 <body>
   <svg style="display: none">
@@ -408,6 +409,12 @@
   </main>
   <footer>Footer content</footer>
 
+  <script>
+    // missing forEach on NodeList for IE11
+    if (window.NodeList && !NodeList.prototype.forEach) {
+      NodeList.prototype.forEach = Array.prototype.forEach;
+    }
+  </script>
   <script src="assets/libs/swiper.min.js"></script>
   <script src="assets/libs/lightbox.min.js"></script>
   <script src="js/main.min.js"></script>

@@ -31,6 +31,7 @@
     border: none;
     box-shadow: none;
     outline: none;
+    cursor: pointer;
     z-index: 2;
   }
 
@@ -42,6 +43,7 @@
     width: 100%;
     height: var(--img-height);
     object-fit: cover;
+    cursor: move;
   }
 
   &__wrapper {

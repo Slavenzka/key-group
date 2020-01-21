@@ -1,0 +1,32 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Regular.woff") format("woff"), url("../assets/fonts/Roboto-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Medium.woff") format("woff"), url("../assets/fonts/Roboto-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Nunito-Bold.woff") format("woff"), url("../assets/fonts/Nunito-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/fontawesome-webfont.woff") format("woff"), url("../assets/fonts/fontawesome-webfont.woff2") format("woff2");
+}

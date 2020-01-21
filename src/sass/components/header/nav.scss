@@ -1,0 +1,222 @@
+@import "../../variables";
+@import "../../mixins";
+
+.nav {
+  margin-top: 4px;
+  margin-left: -10px;
+  margin-right: -10px;
+  width: 100vw;
+  max-height: 0;
+  transition: max-height 0.6s;
+
+  &--opened {
+    max-height: 600px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50vw;
+      width: 200vw;
+      height: 1px;
+      background-color: $colorDarker;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 8px 10px;
+    @include fontMenu;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 0;
+    width: 51px;
+    height: 38px;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &::before {
+      content: "+";
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      color: $colorHighlight;
+    }
+  }
+
+  &__sublist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: height 0.6s;
+    overflow: hidden;
+  }
+
+  &__inner {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__subitem {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50vw;
+      width: 200vw;
+      height: 1px;
+      background-color: $colorDarker;
+    }
+  }
+
+  &__sublink {
+    display: block;
+    padding: 8px 20px;
+    @include fontMenu;
+  }
+}
+
+@media(min-width: 992px) {
+  .nav {
+    margin: 0;
+    width: auto;
+    max-height: 100%;
+    flex-grow: 1;
+
+    &__list {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__item {
+      &::before {
+        display: none;
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 12px;
+      }
+
+      &:hover .nav__sublist {
+        animation-name: showMenu;
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+      }
+
+      &--submenu {
+        .nav__link {
+          position: relative;
+
+          &::before {
+            content: "\f107";
+            position: absolute;
+            right: 0;
+            top: calc(50% - 13px / 2);
+            display: block;
+            width: 8px;
+            height: 13px;
+            font-family: "Font Awesome", sans-serif;
+            font-size: 13px;
+            line-height: 1;
+            color: $colorDarkest;
+          }
+        }
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: 0 12px 0 0;
+      height: 90px;
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__sublist {
+      position: absolute;
+      top: calc(100%);
+      left: -24px;
+      display: flex;
+      padding: 25px;
+      width: auto;
+      background-color: $colorLightest;
+      border-top: 2px solid $colorHighlight;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: 50% 0;
+    }
+
+    &__column {
+      width: 190px;
+
+      &:not(:first-of-type) {
+        margin-left: 50px;
+      }
+    }
+
+    &__subitem {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__sublink {
+      padding: 10px 15px;
+      @include fontRegular;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $colorLightest;
+        background-color: $colorHighlight;
+      }
+    }
+
+  }
+}
+
+@media(min-width: 1200px) {
+  .nav {
+    &__item {
+      &:not(:first-of-type) {
+        margin-left: 24px;
+      }
+    }
+
+    &__link {
+      padding: 0 24px 0 0;
+    }
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    transform: scaleY(0)
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1)
+  }
+}

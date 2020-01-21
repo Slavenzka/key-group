@@ -1,0 +1,229 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/header/header.scss */
+.header {
+  background-color: #fff;
+  border-bottom: 2px solid #f85c70;
+  overflow: hidden;
+}
+
+/* line 9, src/sass/components/header/header.scss */
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 9px 0 0 0;
+}
+
+/* line 16, src/sass/components/header/header.scss */
+.header__logo {
+  height: 32px;
+}
+
+/* line 19, src/sass/components/header/header.scss */
+.header__logo-link {
+  margin-bottom: 5px;
+}
+
+/* line 24, src/sass/components/header/header.scss */
+.header__post {
+  position: relative;
+  margin-left: auto;
+  padding: 5px 10px 5px 27px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  color: white;
+  background-color: #f85c70;
+  border-radius: 50px;
+}
+
+@media (min-width: 992px) {
+  /* line 24, src/sass/components/header/header.scss */
+  .header__post {
+    font-size: 15px;
+    line-height: 26px;
+  }
+}
+
+/* line 32, src/sass/components/header/header.scss */
+.header__post::before {
+  content: "\f067";
+  position: absolute;
+  top: calc(50% - 14px / 2);
+  left: 10px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+}
+
+/* line 43, src/sass/components/header/header.scss */
+.header__post span {
+  display: none;
+}
+
+/* line 48, src/sass/components/header/header.scss */
+.header__cabinet {
+  position: relative;
+  margin-left: 10px;
+  font-size: 0;
+}
+
+/* line 53, src/sass/components/header/header.scss */
+.header__cabinet::before {
+  content: "\f2c0";
+  font-family: "Font Awesome", sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  color: #f85c70;
+}
+
+/* line 62, src/sass/components/header/header.scss */
+.header__burger {
+  position: relative;
+  padding: 0;
+  margin-left: 18px;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* line 73, src/sass/components/header/header.scss */
+.header__burger::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f85c70;
+  -webkit-box-shadow: 0 6px 0 0 #f85c70;
+          box-shadow: 0 6px 0 0 #f85c70;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+
+/* line 86, src/sass/components/header/header.scss */
+.header__burger::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #f85c70;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+
+/* line 100, src/sass/components/header/header.scss */
+.header__burger--opened::before {
+  left: 1px;
+  width: 108%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+/* line 107, src/sass/components/header/header.scss */
+.header__burger--opened::after {
+  left: 1px;
+  width: 108%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+@media (min-width: 992px) {
+  /* line 118, src/sass/components/header/header.scss */
+  .header {
+    border-bottom: none;
+    overflow: visible;
+  }
+  /* line 122, src/sass/components/header/header.scss */
+  .header__wrapper {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding: 0;
+  }
+  /* line 127, src/sass/components/header/header.scss */
+  .header__logo-link {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 131, src/sass/components/header/header.scss */
+  .header__logo {
+    height: 40px;
+  }
+  /* line 134, src/sass/components/header/header.scss */
+  .header__logo-link {
+    margin-bottom: 0;
+  }
+  /* line 139, src/sass/components/header/header.scss */
+  .header__post {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    margin-left: 20px;
+    padding: 13px 30px 13px 56px;
+  }
+  /* line 144, src/sass/components/header/header.scss */
+  .header__post::before {
+    top: calc(50% - 17px / 2);
+    left: 30px;
+    font-size: 17px;
+  }
+  /* line 150, src/sass/components/header/header.scss */
+  .header__post:hover {
+    background-color: #e43d40;
+  }
+  /* line 154, src/sass/components/header/header.scss */
+  .header__post span {
+    display: inline;
+  }
+  /* line 159, src/sass/components/header/header.scss */
+  .header__cabinet {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    margin-left: 15px;
+    font-size: 0;
+  }
+  /* line 164, src/sass/components/header/header.scss */
+  .header__cabinet::before {
+    font-size: 20px;
+  }
+  /* line 169, src/sass/components/header/header.scss */
+  .header__burger {
+    display: none;
+  }
+  /* line 173, src/sass/components/header/header.scss */
+  .header__nav {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 181, src/sass/components/header/header.scss */
+  .header__logo {
+    height: 45px;
+  }
+}

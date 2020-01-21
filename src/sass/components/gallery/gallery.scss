@@ -1,0 +1,134 @@
+@import "../../variables";
+@import "../../mixins";
+
+.gallery {
+  padding: 20px;
+  background-color: $colorLightest;
+  --img-height: 260px;
+  --thumb-height: 80px;
+
+  &__top {
+    position: relative;
+    height: var(--img-height);
+  }
+
+  &__top-list,
+  &__thumbs-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__lightbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    background-color: $colorHighlightDark;
+    border-radius: 50%;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    z-index: 2;
+  }
+
+  &__icon {
+    fill: $colorLightest;
+  }
+
+  &__img {
+    width: 100%;
+    height: var(--img-height);
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__btn {
+    position: absolute;
+    top: calc(50% - 36px / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: $colorHighlight;
+    border-radius: 50%;
+    z-index: 1;
+
+    &::before {
+      content: "\f105";
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      color: $colorLightest;
+    }
+
+    &--prev {
+      left: -18px;
+
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--next {
+      right: -18px;
+    }
+  }
+
+  &__thumbs {
+    margin-top: 10px;
+    height: var(--thumb-height);
+  }
+
+  &__thumb {
+    overflow: hidden;
+  }
+
+  &__img-thumb {
+    width: 100%;
+    height: var(--thumb-height);
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .swiper-slide-thumb-active img {
+    opacity: 1;
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+}
+
+@media(min-width: 768px) {
+  .gallery {
+    padding: 30px;
+    --img-height: 362px;
+    --thumb-height: 85px;
+  }
+}
+
+@media(min-width: 992px) {
+  .gallery {
+    --img-height: 320px;
+    --thumb-height: 70px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .gallery {
+    --img-height: 465px;
+    --thumb-height: 108px;
+
+    &__img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}

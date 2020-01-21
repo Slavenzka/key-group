@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Key group trial task</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/libs/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/libs/lightbox.min.css">
+</head>
+<body>
+  <svg style="display: none">
+    <symbol class="search-icon" id="search-icon">
+      <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/>
+    </symbol>
+  </svg>
+
+  <header class="header" data-header>
+    <div class="container container-elastic">
+      <div class="header__wrapper">
+        <a href="#" class="header__logo-link">
+          <img src="assets/images/logo-dark.png" alt="Theme logo" class="header__logo">
+        </a>
+        <a href="#" class="header__post">
+          Post <span>Your</span> Ad
+        </a>
+        <a href="#" class="header__cabinet">
+          Log into your cabinet
+        </a>
+        <button type="button" class="header__burger" data-menu-trigger>
+          Mobile menu control
+        </button>
+        <nav class="header__nav nav" data-menu-container>
+          <ul class="nav__list">
+            <li class="nav__item nav__item--1 nav__item--submenu">
+              <a href="#" class="nav__link">
+                Home
+              </a>
+              <button type="button" class="nav__btn" data-submenu-trigger>
+                Toggle submenu
+              </button>
+              <ul class="nav__sublist" data-submenu-container>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Home 1
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Home 2
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Home 3
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Home 4
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Home 5
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--2 nav__item--submenu">
+              <a href="#" class="nav__link">
+                All Ads
+              </a>
+              <button type="button" class="nav__btn" data-submenu-trigger>
+                Toggle submenu
+              </button>
+              <ul class="nav__sublist" data-submenu-container>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Grid View 1
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Grid View 2
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Grid View 3
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Grid View 4
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        List View 1
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        List View 2
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        List View 3
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        List View 4
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Single Ad 1
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Single Ad 2
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        All Stores
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Store Details
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--3 nav__item--submenu">
+              <a href="#" class="nav__link">
+                Pages
+              </a>
+              <button type="button" class="nav__btn" data-submenu-trigger>
+                Toggle submenu
+              </button>
+              <ul class="nav__sublist" data-submenu-container>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        About Us
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        FAQ
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Search Result
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Error 404
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        All Ads
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Single Ad 1
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Single Ad 2
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        My Account
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--4 nav__item--submenu">
+              <a href="#" class="nav__link">
+                Stores
+              </a>
+              <button type="button" class="nav__btn" data-submenu-trigger>
+                Toggle submenu
+              </button>
+              <ul class="nav__sublist" data-submenu-container>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        All Stores
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Store Details
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--5 nav__item--submenu">
+              <a href="#" class="nav__link">
+                Blog
+              </a>
+              <button type="button" class="nav__btn" data-submenu-trigger>
+                Toggle submenu
+              </button>
+              <ul class="nav__sublist" data-submenu-container>
+                <li class="nav__column">
+                  <ul class="nav__inner">
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Blog - Default Layout
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Blog - Standard Layout
+                      </a>
+                    </li>
+                    <li class="nav__subitem">
+                      <a href="#" class="nav__sublink">
+                        Single Post
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--6">
+              <a href="#" class="nav__link">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="banner">
+      <div class="container">
+        <h1 class="banner__title">
+          High quality brand new headphone
+        </h1>
+        <ul class="banner__list">
+          <li class="banner__item">
+            <a href="#" class="banner__link">
+              Home
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="#" class="banner__link">
+              Classified Listings
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="#" class="banner__link">
+              Electronics
+            </a>
+          </li>
+          <li class="banner__item">
+            <a href="#" class="banner__link">
+              Mobile Accessories
+            </a>
+          </li>
+          <li class="banner__item">
+            <a class="banner__link">
+              High quality brand new headphone
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="wrapper">
+      <div class="container">
+        <div class="content">
+          <section class="gallery">
+            <h2 class="visually-hidden">Product gallery</h2>
+            <div class="gallery__top swiper-container gallery-top">
+              <button class="gallery__lightbox" data-lightbox-trigger aria-labe="Lightbox trigger">
+                <svg class="gallery__icon" width="15" height="15" viewbox="0 0 50 50">
+                  <use xlink:href="#search-icon"></use>
+                </svg>
+              </button>
+              <ul class="gallery__top-list swiper-wrapper">
+                <li class="gallery__item swiper-slide">
+                  <img
+                    class="gallery__img"
+                    src="assets/images/gallery-img-1.jpg"
+                    data-jslghtbx="assets/images/gallery-img-1.jpg"
+                    alt="Gallery slide 1"
+                    data-jslghtbx-group="group1"
+                    data-product-image
+                  >
+                </li>
+                <li class="gallery__item swiper-slide">
+                  <img
+                    class="gallery__img"
+                    src="assets/images/gallery-img-2.jpg"
+                    data-jslghtbx="assets/images/gallery-img-2.jpg"
+                    alt="Gallery slide 1"
+                    data-jslghtbx-group="group1"
+                    data-product-image
+                  >
+                </li>
+                <li class="gallery__item swiper-slide">
+                  <img
+                    class="gallery__img"
+                    src="assets/images/gallery-img-3.jpg"
+                    data-jslghtbx="assets/images/gallery-img-3.jpg"
+                    alt="Gallery slide 1"
+                    data-jslghtbx-group="group1"
+                    data-product-image
+                  >
+                </li>
+                <li class="gallery__item swiper-slide">
+                  <img
+                    class="gallery__img"
+                    src="assets/images/gallery-img-4.jpg"
+                    data-jslghtbx="assets/images/gallery-img-4.jpg"
+                    alt="Gallery slide 1"
+                    data-jslghtbx-group="group1"
+                    data-product-image
+                  >
+                </li>
+                <li class="gallery__item swiper-slide">
+                  <img
+                    class="gallery__img"
+                    src="assets/images/gallery-img-5.jpg"
+                    data-jslghtbx="assets/images/gallery-img-5.jpg"
+                    alt="Gallery slide 1"
+                    data-jslghtbx-group="group1"
+                    data-product-image
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="gallery__wrapper">
+              <div class="gallery__thumbs swiper-container gallery-thumbs">
+                <ul class="gallery__thumbs-list swiper-wrapper">
+                  <li class="gallery__thumb swiper-slide">
+                    <img class="gallery__img-thumb" src="assets/images/gallery-thumb-1.jpg" alt="Gallery thumb 1">
+                  </li>
+                  <li class="gallery__thumb swiper-slide">
+                    <img class="gallery__img-thumb" src="assets/images/gallery-thumb-2.jpg" alt="Gallery thumb 2">
+                  </li>
+                  <li class="gallery__thumb swiper-slide">
+                    <img class="gallery__img-thumb" src="assets/images/gallery-thumb-3.jpg" alt="Gallery thumb 3">
+                  </li>
+                  <li class="gallery__thumb swiper-slide">
+                    <img class="gallery__img-thumb" src="assets/images/gallery-thumb-4.jpg" alt="Gallery thumb 4">
+                  </li>
+                  <li class="gallery__thumb swiper-slide">
+                    <img class="gallery__img-thumb" src="assets/images/gallery-thumb-5.jpg" alt="Gallery thumb 5">
+                  </li>
+                </ul>
+              </div>
+              <div class="gallery__btn gallery__btn--prev"></div>
+              <div class="gallery__btn gallery__btn--next"></div>
+            </div>
+            <div class="gallery__legend legend"></div>
+          </section>
+        </div>
+        <aside class="aside"></aside>
+      </div>
+    </div>
+  </main>
+  <footer>Footer content</footer>
+
+  <script src="assets/libs/swiper.min.js"></script>
+  <script src="assets/libs/lightbox.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

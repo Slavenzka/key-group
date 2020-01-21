@@ -1,0 +1,161 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/gallery/gallery.scss */
+.gallery {
+  padding: 20px;
+  background-color: #fff;
+  --img-height: 260px;
+  --thumb-height: 80px;
+}
+
+/* line 10, src/sass/components/gallery/gallery.scss */
+.gallery__top {
+  position: relative;
+  height: var(--img-height);
+}
+
+/* line 15, src/sass/components/gallery/gallery.scss */
+.gallery__top-list, .gallery__thumbs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 22, src/sass/components/gallery/gallery.scss */
+.gallery__lightbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  background-color: #e43d40;
+  border-radius: 50%;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  z-index: 2;
+}
+
+/* line 37, src/sass/components/gallery/gallery.scss */
+.gallery__icon {
+  fill: #fff;
+}
+
+/* line 41, src/sass/components/gallery/gallery.scss */
+.gallery__img {
+  width: 100%;
+  height: var(--img-height);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* line 47, src/sass/components/gallery/gallery.scss */
+.gallery__wrapper {
+  position: relative;
+}
+
+/* line 51, src/sass/components/gallery/gallery.scss */
+.gallery__btn {
+  position: absolute;
+  top: calc(50% - 36px / 2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: #f85c70;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* line 63, src/sass/components/gallery/gallery.scss */
+.gallery__btn::before {
+  content: "\f105";
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* line 70, src/sass/components/gallery/gallery.scss */
+.gallery__btn--prev {
+  left: -18px;
+}
+
+/* line 73, src/sass/components/gallery/gallery.scss */
+.gallery__btn--prev::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* line 78, src/sass/components/gallery/gallery.scss */
+.gallery__btn--next {
+  right: -18px;
+}
+
+/* line 83, src/sass/components/gallery/gallery.scss */
+.gallery__thumbs {
+  margin-top: 10px;
+  height: var(--thumb-height);
+}
+
+/* line 88, src/sass/components/gallery/gallery.scss */
+.gallery__thumb {
+  overflow: hidden;
+}
+
+/* line 92, src/sass/components/gallery/gallery.scss */
+.gallery__img-thumb {
+  width: 100%;
+  height: var(--thumb-height);
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.6;
+}
+
+/* line 99, src/sass/components/gallery/gallery.scss */
+.gallery .swiper-slide-thumb-active img {
+  opacity: 1;
+}
+
+/* line 103, src/sass/components/gallery/gallery.scss */
+.gallery .swiper-button-disabled {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  /* line 109, src/sass/components/gallery/gallery.scss */
+  .gallery {
+    padding: 30px;
+    --img-height: 362px;
+    --thumb-height: 85px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 117, src/sass/components/gallery/gallery.scss */
+  .gallery {
+    --img-height: 320px;
+    --thumb-height: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 124, src/sass/components/gallery/gallery.scss */
+  .gallery {
+    --img-height: 465px;
+    --thumb-height: 108px;
+  }
+  /* line 128, src/sass/components/gallery/gallery.scss */
+  .gallery__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

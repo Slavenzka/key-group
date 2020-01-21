@@ -1,0 +1,185 @@
+@import "../../variables";
+@import "../../mixins";
+
+.header {
+  background-color: $colorLightest;
+  border-bottom: 2px solid $colorHighlight;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 9px 0 0 0;
+  }
+
+  &__logo {
+    height: 32px;
+
+    &-link {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__post {
+    position: relative;
+    margin-left: auto;
+    padding: 5px 10px 5px 27px;
+    @include fontBtn;
+    background-color: $colorHighlight;
+    border-radius: 50px;
+
+    &::before {
+      content: "\f067";
+      position: absolute;
+      top: calc(50% - 14px / 2);
+      left: 10px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      color: $colorLightest;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  &__cabinet {
+    position: relative;
+    margin-left: 10px;
+    font-size: 0;
+
+    &::before {
+      content: "\f2c0";
+      font-family: "Font Awesome", sans-serif;
+      font-size: 18px;
+      line-height: 1;
+      color: $colorHighlight;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    padding: 0;
+    margin-left: 18px;
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $colorHighlight;
+      box-shadow: 0 6px 0 0 $colorHighlight;
+      transition-duration: 0.3s;
+      transform-origin: 0 50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $colorHighlight;
+      transition-duration: 0.3s;
+      transform-origin: 0 50%;
+
+    }
+
+    &--opened {
+      &::before {
+        left: 1px;
+        width: 108%;
+        box-shadow: none;
+        transform: rotate(30deg);
+      }
+
+      &::after {
+        left: 1px;
+        width: 108%;
+        box-shadow: none;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    border-bottom: none;
+    overflow: visible;
+
+    &__wrapper {
+      flex-wrap: nowrap;
+      padding: 0;
+    }
+
+    &__logo-link {
+      order: 1;
+    }
+
+    &__logo {
+      height: 40px;
+
+      &-link {
+        margin-bottom: 0;
+      }
+    }
+
+    &__post {
+      order: 4;
+      margin-left: 20px;
+      padding: 13px 30px 13px 56px;
+
+      &::before {
+        top: calc(50% - 17px / 2);
+        left: 30px;
+        font-size: 17px;
+      }
+
+      &:hover {
+        background-color: $colorHighlightDark;
+      }
+
+      span {
+        display: inline;
+      }
+    }
+
+    &__cabinet {
+      order: 3;
+      margin-left: 15px;
+      font-size: 0;
+
+      &::before {
+        font-size: 20px;
+      }
+    }
+
+    &__burger {
+      display: none;
+    }
+
+    &__nav {
+      order: 2;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    &__logo {
+      height: 45px;
+    }
+  }
+}

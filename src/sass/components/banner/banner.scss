@@ -1,0 +1,58 @@
+@import "../../variables";
+@import "../../mixins";
+
+.banner {
+  position: relative;
+  padding: 60px 0 80px 0;
+  background-image: url("../assets/images/home-big-banner2.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  & > * {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0;
+    @include h1;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 14px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-of-type)::after {
+      content: "\f105";
+      padding: 0 7px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      color: $colorLightest;
+    }
+  }
+
+  &__link {
+    @include fontRegularMain($colorLightest);
+
+    &:not([href]) {
+      color: $colorDisabled;
+    }
+  }
+}

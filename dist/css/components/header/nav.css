@@ -206,13 +206,12 @@
   /* line 157, src/sass/components/header/nav.scss */
   .nav__sublist {
     position: absolute;
-    top: calc(100%);
+    top: 100%;
     left: -24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 25px;
-    width: auto;
     background-color: #fff;
     border-top: 2px solid #f85c70;
     opacity: 0;
@@ -220,20 +219,22 @@
             transform: scaleY(0);
     -webkit-transform-origin: 50% 0;
             transform-origin: 50% 0;
+    z-index: 3;
   }
   /* line 171, src/sass/components/header/nav.scss */
   .nav__column {
+    position: relative;
     width: 190px;
   }
-  /* line 174, src/sass/components/header/nav.scss */
+  /* line 175, src/sass/components/header/nav.scss */
   .nav__column:not(:first-of-type) {
     margin-left: 50px;
   }
-  /* line 180, src/sass/components/header/nav.scss */
+  /* line 181, src/sass/components/header/nav.scss */
   .nav__subitem::before {
     display: none;
   }
-  /* line 185, src/sass/components/header/nav.scss */
+  /* line 186, src/sass/components/header/nav.scss */
   .nav__sublink {
     padding: 10px 15px;
     font-family: "Roboto", sans-serif;
@@ -244,7 +245,7 @@
     -webkit-transition-duration: 0.3s;
             transition-duration: 0.3s;
   }
-  /* line 190, src/sass/components/header/nav.scss */
+  /* line 191, src/sass/components/header/nav.scss */
   .nav__sublink:hover {
     color: #fff;
     background-color: #f85c70;
@@ -252,11 +253,11 @@
 }
 
 @media (min-width: 1200px) {
-  /* line 202, src/sass/components/header/nav.scss */
+  /* line 203, src/sass/components/header/nav.scss */
   .nav__item:not(:first-of-type) {
     margin-left: 24px;
   }
-  /* line 207, src/sass/components/header/nav.scss */
+  /* line 208, src/sass/components/header/nav.scss */
   .nav__link {
     padding: 0 24px 0 0;
   }

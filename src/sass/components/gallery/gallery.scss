@@ -94,6 +94,7 @@
     height: var(--thumb-height);
     object-fit: cover;
     opacity: 0.6;
+    cursor: pointer;
   }
 
   .swiper-slide-thumb-active img {

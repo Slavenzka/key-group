@@ -117,20 +117,21 @@
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.6;
+  cursor: pointer;
 }
 
-/* line 99, src/sass/components/gallery/gallery.scss */
+/* line 100, src/sass/components/gallery/gallery.scss */
 .gallery .swiper-slide-thumb-active img {
   opacity: 1;
 }
 
-/* line 103, src/sass/components/gallery/gallery.scss */
+/* line 104, src/sass/components/gallery/gallery.scss */
 .gallery .swiper-button-disabled {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 109, src/sass/components/gallery/gallery.scss */
+  /* line 110, src/sass/components/gallery/gallery.scss */
   .gallery {
     padding: 30px;
     --img-height: 362px;
@@ -139,7 +140,7 @@
 }
 
 @media (min-width: 992px) {
-  /* line 117, src/sass/components/gallery/gallery.scss */
+  /* line 118, src/sass/components/gallery/gallery.scss */
   .gallery {
     --img-height: 320px;
     --thumb-height: 70px;
@@ -147,12 +148,12 @@
 }
 
 @media (min-width: 1200px) {
-  /* line 124, src/sass/components/gallery/gallery.scss */
+  /* line 125, src/sass/components/gallery/gallery.scss */
   .gallery {
     --img-height: 465px;
     --thumb-height: 108px;
   }
-  /* line 128, src/sass/components/gallery/gallery.scss */
+  /* line 129, src/sass/components/gallery/gallery.scss */
   .gallery__img {
     position: absolute;
     left: 0;

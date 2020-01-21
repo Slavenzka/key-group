@@ -156,19 +156,20 @@
 
     &__sublist {
       position: absolute;
-      top: calc(100%);
+      top: 100%;
       left: -24px;
       display: flex;
       padding: 25px;
-      width: auto;
       background-color: $colorLightest;
       border-top: 2px solid $colorHighlight;
       opacity: 0;
       transform: scaleY(0);
       transform-origin: 50% 0;
+      z-index: 3;
     }
 
     &__column {
+      position: relative;
       width: 190px;
 
       &:not(:first-of-type) {

@@ -4,8 +4,8 @@
 
     function move (evt, start) {
       const shift = {
-        x: (start.x - evt.clientX) / 15,
-        y: (start.y - evt.clientY) / 15
+        x: (start.x - evt.clientX) / 25,
+        y: (start.y - evt.clientY) / 25
       }
 
       start = {
@@ -21,7 +21,7 @@
       const image = item.querySelector('[data-product-image]');
 
       image.addEventListener('mouseenter', evt => {
-        image.style.transform = 'Scale(1.25)';
+        image.style.transform = 'Scale(1.2)';
         image.style.transitionDuration = '0.5s';
         image.style.transitionProperty = 'transform';
         image.style.top = '0';
@@ -32,16 +32,18 @@
           y: evt.clientY
         }
 
-        image.addEventListener('mousemove', evt => move(evt, startCoords));
-      });
+        const handleMove = evt => move(evt, startCoords);
 
-      image.addEventListener('mouseleave', () => {
-        image.style.transform = 'Scale(1)';
-        image.style.top = '0';
-        image.style.left = '0';
-        image.style.transitionProperty = 'transform, left, top';
+        image.addEventListener('mousemove', handleMove);
 
-        image.removeEventListener('mousemove', evt => move(evt, startCoords));
+        image.addEventListener('mouseleave', () => {
+          image.style.transform = 'Scale(1)';
+          image.style.top = '0';
+          image.style.left = '0';
+          image.style.transitionProperty = 'transform, left, top';
+
+          image.removeEventListener('mousemove', handleMove);
+        });
       });
     });
   }

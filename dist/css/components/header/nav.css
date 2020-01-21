@@ -224,7 +224,7 @@
   /* line 171, src/sass/components/header/nav.scss */
   .nav__column {
     position: relative;
-    width: 190px;
+    min-width: 190px;
   }
   /* line 175, src/sass/components/header/nav.scss */
   .nav__column:not(:first-of-type) {

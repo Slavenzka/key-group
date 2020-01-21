@@ -170,7 +170,7 @@
 
     &__column {
       position: relative;
-      width: 190px;
+      min-width: 190px;
 
       &:not(:first-of-type) {
         margin-left: 50px;

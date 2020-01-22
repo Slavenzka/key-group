@@ -1,0 +1,14 @@
+@import "../../variables";
+@import "../../mixins";
+
+@media(min-width: 992px) {
+  .aside {
+    display: block;
+    width: 293px;
+  }
+}
+@media(min-width: 1200px) {
+  .aside {
+    width: 272px;
+  }
+}

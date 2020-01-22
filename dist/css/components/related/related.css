@@ -1,0 +1,172 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/related/related.scss */
+.related {
+  position: relative;
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 9, src/sass/components/related/related.scss */
+.related__wrapper {
+  position: relative;
+  padding: 20px;
+}
+
+/* line 14, src/sass/components/related/related.scss */
+.related__btn {
+  position: absolute;
+  top: 12px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+/* line 25, src/sass/components/related/related.scss */
+.related__btn::before {
+  content: "\f104";
+  display: block;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  color: #a6a6a6;
+  text-align: center;
+}
+
+/* line 37, src/sass/components/related/related.scss */
+.related__btn:hover::before, .related__btn:active::before {
+  color: #f85c70;
+}
+
+/* line 42, src/sass/components/related/related.scss */
+.related__btn--prev {
+  right: calc(30px + 10px + 20px);
+}
+
+/* line 46, src/sass/components/related/related.scss */
+.related__btn--next {
+  right: 30px;
+}
+
+/* line 49, src/sass/components/related/related.scss */
+.related__btn--next::before {
+  content: "\f105";
+}
+
+/* line 55, src/sass/components/related/related.scss */
+.related__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 61, src/sass/components/related/related.scss */
+.related__link {
+  display: block;
+  font-size: 0;
+}
+
+/* line 66, src/sass/components/related/related.scss */
+.related__img {
+  width: 100%;
+}
+
+/* line 70, src/sass/components/related/related.scss */
+.related__content {
+  padding: 25px 20px;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+}
+
+/* line 77, src/sass/components/related/related.scss */
+.related__name {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #222;
+  color: #2a2a2a;
+}
+
+/* line 82, src/sass/components/related/related.scss */
+.related__name--new {
+  position: relative;
+}
+
+/* line 85, src/sass/components/related/related.scss */
+.related__name--new::after {
+  content: "New";
+  margin-left: 10px;
+  padding: 3px 5px 4px 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #e43d40;
+}
+
+/* line 100, src/sass/components/related/related.scss */
+.related__meta {
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 106, src/sass/components/related/related.scss */
+.related__meta-item {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #999;
+}
+
+/* line 109, src/sass/components/related/related.scss */
+.related__meta-item::before {
+  content: "";
+  margin-right: 7px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #999;
+}
+
+/* line 118, src/sass/components/related/related.scss */
+.related__meta-item--time::before {
+  content: "\f017";
+}
+
+/* line 122, src/sass/components/related/related.scss */
+.related__meta-item--location::before {
+  content: "\f041";
+}
+
+/* line 126, src/sass/components/related/related.scss */
+.related__meta-item:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+/* line 131, src/sass/components/related/related.scss */
+.related__price {
+  margin: 12px 0 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #f85c70;
+}
+
+@media (min-width: 768px) {
+  /* line 143, src/sass/components/related/related.scss */
+  .related__wrapper {
+    padding: 30px;
+  }
+}

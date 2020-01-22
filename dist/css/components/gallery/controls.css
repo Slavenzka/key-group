@@ -1,0 +1,109 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/gallery/controls.scss */
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 20px;
+  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #444;
+  border-top: 1px solid #dadada;
+}
+
+/* line 13, src/sass/components/gallery/controls.scss */
+.controls__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 21, src/sass/components/gallery/controls.scss */
+.controls__item {
+  margin-right: 30px;
+}
+
+/* line 24, src/sass/components/gallery/controls.scss */
+.controls__item--fav .controls__link::before {
+  content: "\f004";
+}
+
+/* line 28, src/sass/components/gallery/controls.scss */
+.controls__item--report .controls__link::before {
+  content: "\f071";
+}
+
+/* line 33, src/sass/components/gallery/controls.scss */
+.controls__link {
+  color: #646464;
+}
+
+/* line 36, src/sass/components/gallery/controls.scss */
+.controls__link::before {
+  content: "";
+  margin-right: 10px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #cacaca;
+}
+
+/* line 46, src/sass/components/gallery/controls.scss */
+.controls__share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 50, src/sass/components/gallery/controls.scss */
+.controls__label {
+  margin-right: 10px;
+  color: #646464;
+}
+
+/* line 54, src/sass/components/gallery/controls.scss */
+.controls__label::before {
+  content: "\f1e0";
+  margin-right: 10px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #cacaca;
+}
+
+/* line 64, src/sass/components/gallery/controls.scss */
+.controls__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 73, src/sass/components/gallery/controls.scss */
+.controls__social:not(:first-of-type) {
+  margin-left: 7px;
+}
+
+/* line 78, src/sass/components/gallery/controls.scss */
+.controls__social-link {
+  display: block;
+  font-size: 0;
+}

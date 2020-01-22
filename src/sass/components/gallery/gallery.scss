@@ -5,7 +5,7 @@
   padding: 20px;
   background-color: $colorLightest;
   --img-height: 260px;
-  --thumb-height: 80px;
+  --thumb-height: auto;
 
   &__top {
     position: relative;
@@ -44,6 +44,18 @@
     height: var(--img-height);
     object-fit: cover;
     cursor: move;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transform: scale(1);
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0s;
+    }
   }
 
   &__wrapper {
@@ -61,6 +73,10 @@
     background-color: $colorHighlight;
     border-radius: 50%;
     z-index: 1;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      display: none;
+    }
 
     &::before {
       content: "\f105";
@@ -91,12 +107,23 @@
     overflow: hidden;
   }
 
+  &__thumbs-list {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      display: flex;
+    }
+  }
+
   &__img-thumb {
     width: 100%;
     height: var(--thumb-height);
     object-fit: cover;
     opacity: 0.6;
     cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      width: auto;
+      pointer-events: none;
+    }
   }
 
   .swiper-slide-thumb-active img {

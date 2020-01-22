@@ -1,0 +1,44 @@
+@import "../../variables";
+@import "../../mixins";
+
+.tip {
+  margin-top: 40px;
+  background-color: $colorLightest;
+
+  &__title {
+    @include h2;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 20px;
+    @include fontRegular($colorMain);
+
+    &::before {
+      content: "\f105";
+      position: absolute;
+      top: calc(50% - 18px / 2);
+      left: 0;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 15px;
+      line-height: 18px;
+      color: $colorHighlightDark;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .tip {
+    margin-top: 30px;
+  }
+}

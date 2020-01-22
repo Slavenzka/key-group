@@ -1,0 +1,142 @@
+@import "../../variables";
+@import "../../mixins";
+
+.tabs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  overflow: hidden;
+
+  &__content {
+    display: none;
+
+    p {
+      margin: 0;
+      @include fontRegularMain($colorMain);
+
+      &:not(:first-of-type) {
+        margin-top: 10px;
+      }
+    }
+
+    dl {
+      display: flex;
+      align-items: flex-start;
+      margin: 0;
+      padding: 0;
+      @include fontRegularMain;
+
+      dt {
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+      }
+
+      dd {
+        margin: 0 0 0 3px;
+        padding: 0;
+      }
+    }
+
+    ul {
+      margin: 20px 0 0 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 30px;
+        @include fontRegularMain($colorMain);
+
+        &::before {
+          content: "\f105";
+          position: absolute;
+          top: 5px;
+          left: 0;
+          width: 16px;
+          height: 16px;
+          font-family: "Font Awesome", sans-serif;
+          font-size: 15px;
+          line-height: 1;
+          color: $colorLightest;
+          text-align: center;
+          background-color: $colorHighlight;
+          border-radius: 50%;
+        }
+
+        &:not(:first-of-type) {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  &__trigger + label {
+    padding: 10px 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    color: #111;
+    background-color: $colorButtonBg;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    cursor: pointer;
+
+    &:first-of-type {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100vw;
+        height: 1px;
+        background-color: $colorButtonBg;
+      }
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 3px;
+    }
+  }
+
+  &__trigger:checked + label {
+    color: $colorLightest;
+    background-color: $colorHighlight;
+  }
+
+  &__trigger--1:checked ~ .tabs__content--1,
+  &__trigger--2:checked ~ .tabs__content--2 {
+    display: block;
+    padding-top: 25px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs {
+    &__trigger + label {
+      padding: 12px 15px;
+      min-width: 120px;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    &__content {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

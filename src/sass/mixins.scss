@@ -35,7 +35,30 @@
 
 @mixin fontRegularMain($color: #444) {
   font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: $color;
+}
+
+@mixin fontRegularBold($color: #444) {
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fontInfo($color: #999) {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: $color;
+}
+
+@mixin fontLabel($color: #646464) {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
   font-weight: 400;
   line-height: 28px;
   color: $color;
@@ -48,4 +71,20 @@
   line-height: 40px;
   color: $color;
   word-wrap: break-word;
+}
+
+@mixin h2($color: #222) {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: $color;
+}
+
+@mixin h3($color: #222) {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $color;
 }

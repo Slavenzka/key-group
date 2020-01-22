@@ -1,0 +1,82 @@
+@import "../../variables";
+@import "../../mixins";
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding-top: 20px;
+  @include fontRegularMain;
+  border-top: 1px solid #dadada;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: 30px;
+
+    &--fav .controls__link::before {
+      content: "\f004";
+    }
+
+    &--report .controls__link::before {
+      content: "\f071";
+    }
+  }
+
+  &__link {
+    color: $colorMain;
+
+    &::before {
+      content: "";
+      margin-right: 10px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: $colorDisabled;
+    }
+  }
+
+  &__share {
+    display: flex;
+  }
+
+  &__label {
+    margin-right: 10px;
+    color: $colorMain;
+
+    &::before {
+      content: "\f1e0";
+      margin-right: 10px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: $colorDisabled;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__social {
+    &:not(:first-of-type) {
+      margin-left: 7px;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    font-size: 0;
+  }
+}

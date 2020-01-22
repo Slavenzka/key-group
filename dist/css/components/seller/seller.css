@@ -1,0 +1,188 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/seller/seller.scss */
+.seller {
+  background-color: #fff;
+}
+
+/* line 7, src/sass/components/seller/seller.scss */
+.seller-mobile {
+  margin-top: 40px;
+}
+
+/* line 11, src/sass/components/seller/seller.scss */
+.seller__wrapper {
+  padding: 30px;
+}
+
+/* line 15, src/sass/components/seller/seller.scss */
+.seller__brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 22, src/sass/components/seller/seller.scss */
+.seller__frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* line 32, src/sass/components/seller/seller.scss */
+.seller__logo {
+  width: 70px;
+}
+
+/* line 36, src/sass/components/seller/seller.scss */
+.seller__theme-link {
+  margin-left: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #222;
+}
+
+/* line 41, src/sass/components/seller/seller.scss */
+.seller__location {
+  position: relative;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 46, src/sass/components/seller/seller.scss */
+.seller__location::before {
+  content: "\f041";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* line 58, src/sass/components/seller/seller.scss */
+.seller__link {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 65, src/sass/components/seller/seller.scss */
+.seller__link::before {
+  content: "\f291";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* line 77, src/sass/components/seller/seller.scss */
+.seller__number {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px 10px 43px;
+  width: 100%;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+}
+
+/* line 87, src/sass/components/seller/seller.scss */
+.seller__phone {
+  position: relative;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #444;
+  text-align: left;
+}
+
+/* line 93, src/sass/components/seller/seller.scss */
+.seller__phone::before {
+  content: "\f095";
+  position: absolute;
+  top: 4px;
+  left: -23px;
+  width: 23px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #e43d40;
+}
+
+/* line 106, src/sass/components/seller/seller.scss */
+.seller__label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+  font-size: 12.8px;
+  text-align: left;
+}
+
+/* line 113, src/sass/components/seller/seller.scss */
+.seller__mail {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+  background-color: #444;
+}
+
+/* line 122, src/sass/components/seller/seller.scss */
+.seller__mail::before {
+  content: "\f0e0";
+  margin-right: 16px;
+  width: 16px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #e43d40;
+}
+
+@media (min-width: 1200px) {
+  /* line 136, src/sass/components/seller/seller.scss */
+  .seller__wrapper {
+    padding: 20px;
+  }
+}

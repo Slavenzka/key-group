@@ -1,0 +1,15 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+@media (min-width: 992px) {
+  /* line 5, src/sass/components/aside/aside.scss */
+  .aside {
+    display: block;
+    width: 293px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 11, src/sass/components/aside/aside.scss */
+  .aside {
+    width: 272px;
+  }
+}

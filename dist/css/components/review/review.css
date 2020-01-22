@@ -1,0 +1,49 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/review/review.scss */
+.review {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 8, src/sass/components/review/review.scss */
+.review__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 13, src/sass/components/review/review.scss */
+.review__stars {
+  margin-left: auto;
+  font-size: 0;
+}
+
+/* line 17, src/sass/components/review/review.scss */
+.review__stars::before {
+  content: "\f005\f005\f005\f005\f005";
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffb400;
+}
+
+/* line 26, src/sass/components/review/review.scss */
+.review__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px;
+}
+
+/* line 32, src/sass/components/review/review.scss */
+.review__avatar {
+  margin-right: 10px;
+  width: 50px;
+  border-radius: 50%;
+}

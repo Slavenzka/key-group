@@ -1,47 +1,75 @@
 /*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
-// Swiper config for thumbs gallery
-let galleryThumbs = new Swiper('.gallery-thumbs', {
-  spaceBetween: 5,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
-  breakpoints: {
-    768: {
-      slidesPerView: 5
+if ( !isIE ) {
+  // Swiper config for thumbs gallery
+  let galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 5,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 5
+      }
+    },
+    allowTouchMove: false,
+    navigation: {
+      nextEl: '.gallery__btn--next',
+      prevEl: '.gallery__btn--prev',
     }
-  },
-  allowTouchMove: false,
-  navigation: {
-    nextEl: '.gallery__btn--next',
-    prevEl: '.gallery__btn--prev',
-  }
-});
-// Swiper config for full image gallery
-let galleryTop = new Swiper('.gallery-top', {
-  spaceBetween: 10,
-  thumbs: {
-    swiper: galleryThumbs
-  }
-});
+  });
+  // Swiper config for full image gallery
+  let galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    autoplay: {
+      delay: 3000,
+    },
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
 
-// Get images array and save first image src
-const images = document.querySelectorAll('[data-product-image]');
-let activeImgSrc = images[0].src;
+  // Get images array and save first image src
+  const images = document.querySelectorAll('[data-product-image]');
+  let activeImgSrc = images[0].src;
 
-// Switch saved src to use in lightbox js trigger on button click
-galleryTop.on('slideChange', (function () {
-  activeImgSrc = images[galleryTop.activeIndex].src;
-}));
+  // Switch saved src to use in lightbox js trigger on button click
+  galleryTop.on('slideChange', (function () {
+    activeImgSrc = images[galleryTop.activeIndex].src;
+  }));
 
-// Init lightbox
-let lightbox = new Lightbox();
-lightbox.load();
+  // Init lightbox
+  let lightbox = new Lightbox();
+  lightbox.load();
 
-// Open lightbox on btn click with previously saved active image src
-document.querySelector('[data-lightbox-trigger]').addEventListener('click', (function () {
-  lightbox.open(activeImgSrc);
-}));
+  // Open lightbox on btn click with previously saved active image src
+  document.querySelector('[data-lightbox-trigger]').addEventListener('click', (function () {
+    lightbox.open(activeImgSrc);
+  }));
+
+  let adsGallery = new Swiper('.related__container', {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: '.related__btn--next',
+      prevEl: '.related__btn--prev',
+    },
+    autoplay: {
+      delay: 3000,
+    },
+    breakpoints: {
+      495: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
+  });
+}
+
 
 
 /**
@@ -137,6 +165,26 @@ Function.prototype.throttle = function (milliseconds, context) {
 }
 
 {
+  const triggers = document.querySelectorAll('[data-phone-trigger]');
+
+  triggers.forEach((function (triggerItem) {
+    const phone = triggerItem.querySelector('[data-phone-number]');
+    const label = triggerItem.querySelector('[data-phone-label]');
+    const originalPhone = phone.textContent;
+
+    function showPhone () {
+      phone.textContent = originalPhone;
+      label.style = 'display: none';
+      triggerItem.removeEventListener('click', showPhone);
+    }
+
+    phone.textContent = phone.textContent.slice(0, phone.textContent.length - 3) + 'XXX'
+
+    triggerItem.addEventListener('click', showPhone);
+  }));
+}
+
+{
   if (window.matchMedia('(min-width: 1200px)').matches) {
     const galleryItems = document.querySelectorAll('.gallery__item');
 
@@ -159,9 +207,6 @@ Function.prototype.throttle = function (milliseconds, context) {
       const image = item.querySelector('[data-product-image]');
 
       image.addEventListener('mouseenter', (function (evt) {
-        image.style.transform = 'Scale(1.2)';
-        image.style.transitionDuration = '0.5s';
-        image.style.transitionProperty = 'transform';
         image.style.top = '0';
         image.style.left = '0';
 
@@ -177,10 +222,8 @@ Function.prototype.throttle = function (milliseconds, context) {
         image.addEventListener('mousemove', handleMove);
 
         image.addEventListener('mouseleave', (function () {
-          image.style.transform = 'Scale(1)';
           image.style.top = '0';
           image.style.left = '0';
-          image.style.transitionProperty = 'transform, left, top';
 
           image.removeEventListener('mousemove', handleMove);
         }));

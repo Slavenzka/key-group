@@ -1,0 +1,34 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 3, src/sass/components/map/map.scss */
+.map {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 7, src/sass/components/map/map.scss */
+.map__wrapper {
+  padding: 20px;
+  height: 330px;
+}
+
+/* line 12, src/sass/components/map/map.scss */
+.map__content {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  /* line 21, src/sass/components/map/map.scss */
+  .map__wrapper {
+    padding: 30px;
+    height: 420px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 30, src/sass/components/map/map.scss */
+  .map__wrapper {
+    height: 520px;
+  }
+}

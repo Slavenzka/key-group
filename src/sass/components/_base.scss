@@ -1,9 +1,12 @@
 @import "../variables";
+@import "../mixins";
 
 body {
 	margin: 0;
   padding: 0;
   background-color: $colorLight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 *,
@@ -36,8 +39,31 @@ a {
   width: 100%;
 }
 
-.content {
+.wrapper {
   margin: 70px 0;
+}
+
+.tablet-minus {
+  display: block;
+}
+
+.notebook-plus {
+  display: none;
+}
+
+.box {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.block-title {
+  margin: 0;
+  padding: 12px 30px;
+  @include h2;
+  border-bottom: 1px solid $colorBorder;
+}
+
+.price {
+  display: none;
 }
 
 @media (min-width: 576px) {
@@ -61,12 +87,39 @@ a {
 }
 
 @media (min-width: 992px) {
+  .wrapper {
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   .container {
     max-width: 960px;
   }
 
   .content {
     width: 616px;
+  }
+
+  .notebook-plus {
+    display: block;
+  }
+
+  .tablet-minus {
+    display: none;
+  }
+
+  .price {
+    display: block;
+    margin-bottom: 25px;
+    padding: 20px 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    color: $colorLightest;
+    background-color: $colorHighlight;
   }
 }
 

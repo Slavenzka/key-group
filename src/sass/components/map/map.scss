@@ -1,0 +1,34 @@
+@import "../../variables";
+
+.map {
+  margin-top: 30px;
+  background-color: $colorLightest;
+
+  &__wrapper {
+    padding: 20px;
+    height: 330px;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .map {
+    &__wrapper {
+      padding: 30px;
+      height: 420px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .map {
+    &__wrapper {
+      height: 520px;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@import "../../variables";
+@import "../../mixins";
+
+.related {
+  position: relative;
+  margin-top: 30px;
+  background-color: $colorLightest;
+
+  &__wrapper {
+    position: relative;
+    padding: 20px;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 12px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    box-shadow:none;
+    cursor: pointer;
+
+    &::before {
+      content: "\f104";
+      display: block;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 20px;
+      line-height: 20px;
+      color: #a6a6a6;
+      text-align: center;
+    }
+
+    &:hover,
+    &:active {
+      &::before {
+        color: $colorHighlight;
+      }
+    }
+
+    &--prev {
+      right: calc(30px + 10px + 20px);
+    }
+
+    &--next {
+      right: 30px;
+
+      &::before {
+        content: "\f105";
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    font-size: 0;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__content {
+    padding: 25px 20px;
+    border-right: 1px solid $colorBorder;
+    border-bottom: 1px solid $colorBorder;
+    border-left: 1px solid $colorBorder;
+  }
+
+  &__name {
+    margin: 0;
+    @include h3;
+    color: #2a2a2a;
+
+    &--new {
+      position: relative;
+
+      &::after {
+        content: "New";
+        margin-left: 10px;
+        padding: 3px 5px 4px 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 1;
+        color: $colorLightest;
+        border-radius: 4px;
+        background-color: $colorHighlightDark;
+      }
+    }
+  }
+
+  &__meta {
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__meta-item {
+    @include fontRegular(#999);
+
+    &::before {
+      content: "";
+      margin-right: 7px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      color: #999;
+    }
+
+    &--time::before {
+      content: "\f017"
+    }
+
+    &--location::before {
+      content: "\f041"
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 8px;
+    }
+  }
+
+  &__price {
+    margin: 12px 0 0 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    color: $colorHighlight;
+  }
+}
+
+@media (min-width: 768px) {
+  .related {
+    &__wrapper {
+      padding: 30px;
+    }
+  }
+}

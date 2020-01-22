@@ -1,0 +1,37 @@
+@import "../../variables";
+@import "../../mixins";
+
+.review {
+  margin-top: 30px;
+  background-color: $colorLightest;
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__stars {
+    margin-left: auto;
+    font-size: 0;
+
+    &::before {
+      content: "\f005\f005\f005\f005\f005";
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: $colorStar;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  &__avatar {
+    margin-right: 10px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}

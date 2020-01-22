@@ -1,0 +1,22 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/ad/ad.scss */
+.ad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 30px;
+}
+
+/* line 9, src/sass/components/ad/ad.scss */
+.ad__link {
+  font-size: 0;
+}
+
+/* line 13, src/sass/components/ad/ad.scss */
+.ad__img {
+  width: 100%;
+  max-width: 280px;
+}

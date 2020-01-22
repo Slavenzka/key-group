@@ -1,12 +1,14 @@
 /*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
-/* line 3, src/sass/components/_base.scss */
+/* line 4, src/sass/components/_base.scss */
 body {
   margin: 0;
   padding: 0;
   background-color: #f8f9fa;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 9, src/sass/components/_base.scss */
+/* line 12, src/sass/components/_base.scss */
 *,
 *::before,
 *::after {
@@ -14,12 +16,12 @@ body {
           box-sizing: border-box;
 }
 
-/* line 15, src/sass/components/_base.scss */
+/* line 18, src/sass/components/_base.scss */
 a {
   text-decoration: none;
 }
 
-/* line 19, src/sass/components/_base.scss */
+/* line 22, src/sass/components/_base.scss */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -32,7 +34,7 @@ a {
   font-size: 0;
 }
 
-/* line 31, src/sass/components/_base.scss */
+/* line 34, src/sass/components/_base.scss */
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -41,50 +43,112 @@ a {
   width: 100%;
 }
 
-/* line 39, src/sass/components/_base.scss */
-.content {
+/* line 42, src/sass/components/_base.scss */
+.wrapper {
   margin: 70px 0;
 }
 
+/* line 46, src/sass/components/_base.scss */
+.tablet-minus {
+  display: block;
+}
+
+/* line 50, src/sass/components/_base.scss */
+.notebook-plus {
+  display: none;
+}
+
+/* line 54, src/sass/components/_base.scss */
+.box {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* line 58, src/sass/components/_base.scss */
+.block-title {
+  margin: 0;
+  padding: 12px 30px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #222;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* line 65, src/sass/components/_base.scss */
+.price {
+  display: none;
+}
+
 @media (min-width: 576px) {
-  /* line 44, src/sass/components/_base.scss */
+  /* line 70, src/sass/components/_base.scss */
   .container {
     max-width: 540px;
   }
-  /* line 48, src/sass/components/_base.scss */
+  /* line 74, src/sass/components/_base.scss */
   .container-elastic {
     max-width: 100%;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 54, src/sass/components/_base.scss */
+  /* line 80, src/sass/components/_base.scss */
   .container {
     max-width: 720px;
   }
-  /* line 58, src/sass/components/_base.scss */
+  /* line 84, src/sass/components/_base.scss */
   .container-elastic {
     max-width: 100%;
   }
 }
 
 @media (min-width: 992px) {
-  /* line 64, src/sass/components/_base.scss */
+  /* line 91, src/sass/components/_base.scss */
+  .wrapper .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  /* line 97, src/sass/components/_base.scss */
   .container {
     max-width: 960px;
   }
-  /* line 68, src/sass/components/_base.scss */
+  /* line 101, src/sass/components/_base.scss */
   .content {
     width: 616px;
+  }
+  /* line 105, src/sass/components/_base.scss */
+  .notebook-plus {
+    display: block;
+  }
+  /* line 109, src/sass/components/_base.scss */
+  .tablet-minus {
+    display: none;
+  }
+  /* line 113, src/sass/components/_base.scss */
+  .price {
+    display: block;
+    margin-bottom: 25px;
+    padding: 20px 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background-color: #f85c70;
   }
 }
 
 @media (min-width: 1200px) {
-  /* line 74, src/sass/components/_base.scss */
+  /* line 127, src/sass/components/_base.scss */
   .container {
     max-width: 1200px;
   }
-  /* line 78, src/sass/components/_base.scss */
+  /* line 131, src/sass/components/_base.scss */
   .content {
     width: 877px;
   }
@@ -707,7 +771,7 @@ a {
 /* line 51, src/sass/components/banner/banner.scss */
 .banner__link {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 28px;
   color: #fff;
@@ -723,7 +787,7 @@ a {
   padding: 20px;
   background-color: #fff;
   --img-height: 260px;
-  --thumb-height: 80px;
+  --thumb-height: auto;
 }
 
 /* line 10, src/sass/components/gallery/gallery.scss */
@@ -769,14 +833,37 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   cursor: move;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-/* line 49, src/sass/components/gallery/gallery.scss */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 42, src/sass/components/gallery/gallery.scss */
+  .gallery__img {
+    pointer-events: none;
+  }
+}
+
+/* line 55, src/sass/components/gallery/gallery.scss */
+.gallery__img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* line 61, src/sass/components/gallery/gallery.scss */
 .gallery__wrapper {
   position: relative;
 }
 
-/* line 53, src/sass/components/gallery/gallery.scss */
+/* line 65, src/sass/components/gallery/gallery.scss */
 .gallery__btn {
   position: absolute;
   top: calc(50% - 36px / 2);
@@ -796,7 +883,14 @@ a {
   z-index: 1;
 }
 
-/* line 65, src/sass/components/gallery/gallery.scss */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 65, src/sass/components/gallery/gallery.scss */
+  .gallery__btn {
+    display: none;
+  }
+}
+
+/* line 81, src/sass/components/gallery/gallery.scss */
 .gallery__btn::before {
   content: "\f105";
   font-family: "Font Awesome", sans-serif;
@@ -804,34 +898,43 @@ a {
   color: #fff;
 }
 
-/* line 72, src/sass/components/gallery/gallery.scss */
+/* line 88, src/sass/components/gallery/gallery.scss */
 .gallery__btn--prev {
   left: -18px;
 }
 
-/* line 75, src/sass/components/gallery/gallery.scss */
+/* line 91, src/sass/components/gallery/gallery.scss */
 .gallery__btn--prev::before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-/* line 80, src/sass/components/gallery/gallery.scss */
+/* line 96, src/sass/components/gallery/gallery.scss */
 .gallery__btn--next {
   right: -18px;
 }
 
-/* line 85, src/sass/components/gallery/gallery.scss */
+/* line 101, src/sass/components/gallery/gallery.scss */
 .gallery__thumbs {
   margin-top: 10px;
   height: var(--thumb-height);
 }
 
-/* line 90, src/sass/components/gallery/gallery.scss */
+/* line 106, src/sass/components/gallery/gallery.scss */
 .gallery__thumb {
   overflow: hidden;
 }
 
-/* line 94, src/sass/components/gallery/gallery.scss */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 110, src/sass/components/gallery/gallery.scss */
+  .gallery__thumbs-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* line 116, src/sass/components/gallery/gallery.scss */
 .gallery__img-thumb {
   width: 100%;
   height: var(--thumb-height);
@@ -841,18 +944,26 @@ a {
   cursor: pointer;
 }
 
-/* line 102, src/sass/components/gallery/gallery.scss */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* line 116, src/sass/components/gallery/gallery.scss */
+  .gallery__img-thumb {
+    width: auto;
+    pointer-events: none;
+  }
+}
+
+/* line 129, src/sass/components/gallery/gallery.scss */
 .gallery .swiper-slide-thumb-active img {
   opacity: 1;
 }
 
-/* line 106, src/sass/components/gallery/gallery.scss */
+/* line 133, src/sass/components/gallery/gallery.scss */
 .gallery .swiper-button-disabled {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* line 112, src/sass/components/gallery/gallery.scss */
+  /* line 139, src/sass/components/gallery/gallery.scss */
   .gallery {
     padding: 30px;
     --img-height: 362px;
@@ -861,7 +972,7 @@ a {
 }
 
 @media (min-width: 992px) {
-  /* line 120, src/sass/components/gallery/gallery.scss */
+  /* line 147, src/sass/components/gallery/gallery.scss */
   .gallery {
     --img-height: 320px;
     --thumb-height: 70px;
@@ -869,15 +980,992 @@ a {
 }
 
 @media (min-width: 1200px) {
-  /* line 127, src/sass/components/gallery/gallery.scss */
+  /* line 154, src/sass/components/gallery/gallery.scss */
   .gallery {
     --img-height: 465px;
     --thumb-height: 108px;
   }
-  /* line 131, src/sass/components/gallery/gallery.scss */
+  /* line 158, src/sass/components/gallery/gallery.scss */
   .gallery__img {
     position: absolute;
     left: 0;
     top: 0;
   }
+}
+
+/* line 4, src/sass/components/gallery/legend.scss */
+.legend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* line 10, src/sass/components/gallery/legend.scss */
+.legend__price {
+  position: relative;
+  padding: 12px 35px 12px 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background-color: #f85c70;
+  -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 50%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, calc(100% - 25px) 50%, 100% 100%, 0 100%);
+}
+
+/* line 22, src/sass/components/gallery/legend.scss */
+.legend__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 30, src/sass/components/gallery/legend.scss */
+.legend__item {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #999;
+  line-height: 28px;
+}
+
+/* line 35, src/sass/components/gallery/legend.scss */
+.legend__item::before {
+  content: "";
+  margin-right: 7px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  color: #999;
+}
+
+/* line 44, src/sass/components/gallery/legend.scss */
+.legend__item--date::before {
+  content: "\f017";
+}
+
+/* line 48, src/sass/components/gallery/legend.scss */
+.legend__item--location::before {
+  content: "\f041";
+}
+
+/* line 52, src/sass/components/gallery/legend.scss */
+.legend__item--views::before {
+  content: "\f06e";
+}
+
+/* line 56, src/sass/components/gallery/legend.scss */
+.legend__item:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+/* line 61, src/sass/components/gallery/legend.scss */
+.legend__tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 5px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 70, src/sass/components/gallery/legend.scss */
+.legend__tag {
+  padding: 5px 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  background-color: #e43d40;
+  border-radius: 4px;
+}
+
+/* line 80, src/sass/components/gallery/legend.scss */
+.legend__tag:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+/* line 84, src/sass/components/gallery/legend.scss */
+.legend__tag--new {
+  background-color: #e43d40;
+}
+
+/* line 88, src/sass/components/gallery/legend.scss */
+.legend__tag--featured {
+  background-color: #17a2b8;
+}
+
+@media (min-width: 768px) {
+  /* line 95, src/sass/components/gallery/legend.scss */
+  .legend {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  /* line 100, src/sass/components/gallery/legend.scss */
+  .legend__price {
+    display: none;
+  }
+  /* line 104, src/sass/components/gallery/legend.scss */
+  .legend .tags {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 112, src/sass/components/gallery/legend.scss */
+  .legend__tag {
+    margin-top: 5px;
+  }
+}
+
+/* line 4, src/sass/components/gallery/tabs.scss */
+.tabs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* line 11, src/sass/components/gallery/tabs.scss */
+.tabs__content {
+  display: none;
+}
+
+/* line 14, src/sass/components/gallery/tabs.scss */
+.tabs__content p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 18, src/sass/components/gallery/tabs.scss */
+.tabs__content p:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+/* line 23, src/sass/components/gallery/tabs.scss */
+.tabs__content dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #444;
+}
+
+/* line 30, src/sass/components/gallery/tabs.scss */
+.tabs__content dl dt {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* line 36, src/sass/components/gallery/tabs.scss */
+.tabs__content dl dd {
+  margin: 0 0 0 3px;
+  padding: 0;
+}
+
+/* line 42, src/sass/components/gallery/tabs.scss */
+.tabs__content ul {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 47, src/sass/components/gallery/tabs.scss */
+.tabs__content ul li {
+  position: relative;
+  padding-left: 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 52, src/sass/components/gallery/tabs.scss */
+.tabs__content ul li::before {
+  content: "\f105";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: #f85c70;
+  border-radius: 50%;
+}
+
+/* line 68, src/sass/components/gallery/tabs.scss */
+.tabs__content ul li:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+/* line 75, src/sass/components/gallery/tabs.scss */
+.tabs__trigger + label {
+  padding: 10px 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  color: #111;
+  background-color: #f2f2f2;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  cursor: pointer;
+}
+
+/* line 88, src/sass/components/gallery/tabs.scss */
+.tabs__trigger + label:first-of-type {
+  position: relative;
+}
+
+/* line 91, src/sass/components/gallery/tabs.scss */
+.tabs__trigger + label:first-of-type::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+/* line 102, src/sass/components/gallery/tabs.scss */
+.tabs__trigger + label:not(:first-of-type) {
+  margin-left: 3px;
+}
+
+/* line 107, src/sass/components/gallery/tabs.scss */
+.tabs__trigger:checked + label {
+  color: #fff;
+  background-color: #f85c70;
+}
+
+/* line 112, src/sass/components/gallery/tabs.scss */
+.tabs__trigger--1:checked ~ .tabs__content--1,
+.tabs__trigger--2:checked ~ .tabs__content--2 {
+  display: block;
+  padding-top: 25px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* line 122, src/sass/components/gallery/tabs.scss */
+  .tabs__trigger + label {
+    padding: 12px 15px;
+    min-width: 120px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  /* line 132, src/sass/components/gallery/tabs.scss */
+  .tabs__content ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  /* line 136, src/sass/components/gallery/tabs.scss */
+  .tabs__content ul li {
+    width: 50%;
+  }
+}
+
+/* line 4, src/sass/components/gallery/controls.scss */
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 20px;
+  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #444;
+  border-top: 1px solid #dadada;
+}
+
+/* line 13, src/sass/components/gallery/controls.scss */
+.controls__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 21, src/sass/components/gallery/controls.scss */
+.controls__item {
+  margin-right: 30px;
+}
+
+/* line 24, src/sass/components/gallery/controls.scss */
+.controls__item--fav .controls__link::before {
+  content: "\f004";
+}
+
+/* line 28, src/sass/components/gallery/controls.scss */
+.controls__item--report .controls__link::before {
+  content: "\f071";
+}
+
+/* line 33, src/sass/components/gallery/controls.scss */
+.controls__link {
+  color: #646464;
+}
+
+/* line 36, src/sass/components/gallery/controls.scss */
+.controls__link::before {
+  content: "";
+  margin-right: 10px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #cacaca;
+}
+
+/* line 46, src/sass/components/gallery/controls.scss */
+.controls__share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 50, src/sass/components/gallery/controls.scss */
+.controls__label {
+  margin-right: 10px;
+  color: #646464;
+}
+
+/* line 54, src/sass/components/gallery/controls.scss */
+.controls__label::before {
+  content: "\f1e0";
+  margin-right: 10px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #cacaca;
+}
+
+/* line 64, src/sass/components/gallery/controls.scss */
+.controls__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 73, src/sass/components/gallery/controls.scss */
+.controls__social:not(:first-of-type) {
+  margin-left: 7px;
+}
+
+/* line 78, src/sass/components/gallery/controls.scss */
+.controls__social-link {
+  display: block;
+  font-size: 0;
+}
+
+/* line 4, src/sass/components/seller/seller.scss */
+.seller {
+  background-color: #fff;
+}
+
+/* line 7, src/sass/components/seller/seller.scss */
+.seller-mobile {
+  margin-top: 40px;
+}
+
+/* line 11, src/sass/components/seller/seller.scss */
+.seller__wrapper {
+  padding: 30px;
+}
+
+/* line 15, src/sass/components/seller/seller.scss */
+.seller__brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 22, src/sass/components/seller/seller.scss */
+.seller__frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* line 32, src/sass/components/seller/seller.scss */
+.seller__logo {
+  width: 70px;
+}
+
+/* line 36, src/sass/components/seller/seller.scss */
+.seller__theme-link {
+  margin-left: 10px;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #222;
+}
+
+/* line 41, src/sass/components/seller/seller.scss */
+.seller__location {
+  position: relative;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 46, src/sass/components/seller/seller.scss */
+.seller__location::before {
+  content: "\f041";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* line 58, src/sass/components/seller/seller.scss */
+.seller__link {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+}
+
+/* line 65, src/sass/components/seller/seller.scss */
+.seller__link::before {
+  content: "\f291";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 25px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* line 77, src/sass/components/seller/seller.scss */
+.seller__number {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px 10px 43px;
+  width: 100%;
+  background-color: #f2f2f2;
+  border: none;
+  outline: none;
+}
+
+/* line 87, src/sass/components/seller/seller.scss */
+.seller__phone {
+  position: relative;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #444;
+  text-align: left;
+}
+
+/* line 93, src/sass/components/seller/seller.scss */
+.seller__phone::before {
+  content: "\f095";
+  position: absolute;
+  top: 4px;
+  left: -23px;
+  width: 23px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #e43d40;
+}
+
+/* line 106, src/sass/components/seller/seller.scss */
+.seller__label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #646464;
+  font-size: 12.8px;
+  text-align: left;
+}
+
+/* line 113, src/sass/components/seller/seller.scss */
+.seller__mail {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+  background-color: #444;
+}
+
+/* line 122, src/sass/components/seller/seller.scss */
+.seller__mail::before {
+  content: "\f0e0";
+  margin-right: 16px;
+  width: 16px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #e43d40;
+}
+
+@media (min-width: 1200px) {
+  /* line 136, src/sass/components/seller/seller.scss */
+  .seller__wrapper {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 5, src/sass/components/aside/aside.scss */
+  .aside {
+    display: block;
+    width: 293px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 11, src/sass/components/aside/aside.scss */
+  .aside {
+    width: 272px;
+  }
+}
+
+/* line 4, src/sass/components/tip/tip.scss */
+.tip {
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+/* line 8, src/sass/components/tip/tip.scss */
+.tip__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #222;
+}
+
+/* line 12, src/sass/components/tip/tip.scss */
+.tip__list {
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+}
+
+/* line 18, src/sass/components/tip/tip.scss */
+.tip__item {
+  position: relative;
+  padding-left: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #646464;
+}
+
+/* line 23, src/sass/components/tip/tip.scss */
+.tip__item::before {
+  content: "\f105";
+  position: absolute;
+  top: calc(50% - 18px / 2);
+  left: 0;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #e43d40;
+}
+
+/* line 34, src/sass/components/tip/tip.scss */
+.tip__item:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+  /* line 41, src/sass/components/tip/tip.scss */
+  .tip {
+    margin-top: 30px;
+  }
+}
+
+/* line 4, src/sass/components/ad/ad.scss */
+.ad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 30px;
+}
+
+/* line 9, src/sass/components/ad/ad.scss */
+.ad__link {
+  font-size: 0;
+}
+
+/* line 13, src/sass/components/ad/ad.scss */
+.ad__img {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* line 3, src/sass/components/map/map.scss */
+.map {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 7, src/sass/components/map/map.scss */
+.map__wrapper {
+  padding: 20px;
+  height: 330px;
+}
+
+/* line 12, src/sass/components/map/map.scss */
+.map__content {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  /* line 21, src/sass/components/map/map.scss */
+  .map__wrapper {
+    padding: 30px;
+    height: 420px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 30, src/sass/components/map/map.scss */
+  .map__wrapper {
+    height: 520px;
+  }
+}
+
+/* line 4, src/sass/components/related/related.scss */
+.related {
+  position: relative;
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 9, src/sass/components/related/related.scss */
+.related__wrapper {
+  position: relative;
+  padding: 20px;
+}
+
+/* line 14, src/sass/components/related/related.scss */
+.related__btn {
+  position: absolute;
+  top: 12px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+/* line 25, src/sass/components/related/related.scss */
+.related__btn::before {
+  content: "\f104";
+  display: block;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  color: #a6a6a6;
+  text-align: center;
+}
+
+/* line 37, src/sass/components/related/related.scss */
+.related__btn:hover::before, .related__btn:active::before {
+  color: #f85c70;
+}
+
+/* line 42, src/sass/components/related/related.scss */
+.related__btn--prev {
+  right: calc(30px + 10px + 20px);
+}
+
+/* line 46, src/sass/components/related/related.scss */
+.related__btn--next {
+  right: 30px;
+}
+
+/* line 49, src/sass/components/related/related.scss */
+.related__btn--next::before {
+  content: "\f105";
+}
+
+/* line 55, src/sass/components/related/related.scss */
+.related__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 61, src/sass/components/related/related.scss */
+.related__link {
+  display: block;
+  font-size: 0;
+}
+
+/* line 66, src/sass/components/related/related.scss */
+.related__img {
+  width: 100%;
+}
+
+/* line 70, src/sass/components/related/related.scss */
+.related__content {
+  padding: 25px 20px;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+}
+
+/* line 77, src/sass/components/related/related.scss */
+.related__name {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #222;
+  color: #2a2a2a;
+}
+
+/* line 82, src/sass/components/related/related.scss */
+.related__name--new {
+  position: relative;
+}
+
+/* line 85, src/sass/components/related/related.scss */
+.related__name--new::after {
+  content: "New";
+  margin-left: 10px;
+  padding: 3px 5px 4px 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #e43d40;
+}
+
+/* line 100, src/sass/components/related/related.scss */
+.related__meta {
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 106, src/sass/components/related/related.scss */
+.related__meta-item {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #999;
+}
+
+/* line 109, src/sass/components/related/related.scss */
+.related__meta-item::before {
+  content: "";
+  margin-right: 7px;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: #999;
+}
+
+/* line 118, src/sass/components/related/related.scss */
+.related__meta-item--time::before {
+  content: "\f017";
+}
+
+/* line 122, src/sass/components/related/related.scss */
+.related__meta-item--location::before {
+  content: "\f041";
+}
+
+/* line 126, src/sass/components/related/related.scss */
+.related__meta-item:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+/* line 131, src/sass/components/related/related.scss */
+.related__price {
+  margin: 12px 0 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #f85c70;
+}
+
+@media (min-width: 768px) {
+  /* line 143, src/sass/components/related/related.scss */
+  .related__wrapper {
+    padding: 30px;
+  }
+}
+
+/* line 4, src/sass/components/review/review.scss */
+.review {
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+/* line 8, src/sass/components/review/review.scss */
+.review__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 13, src/sass/components/review/review.scss */
+.review__stars {
+  margin-left: auto;
+  font-size: 0;
+}
+
+/* line 17, src/sass/components/review/review.scss */
+.review__stars::before {
+  content: "\f005\f005\f005\f005\f005";
+  font-family: "Font Awesome", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffb400;
+}
+
+/* line 26, src/sass/components/review/review.scss */
+.review__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px;
+}
+
+/* line 32, src/sass/components/review/review.scss */
+.review__avatar {
+  margin-right: 10px;
+  width: 50px;
+  border-radius: 50%;
 }

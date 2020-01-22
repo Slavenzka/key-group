@@ -8,14 +8,32 @@
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" type="text/css" href="assets/libs/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/swiper.min.css">
   <link rel="stylesheet" type="text/css" href="assets/libs/lightbox.min.css">
   <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="assets/libs/ie11CustomProperties.js"><\x2fscript>');</script>
 </head>
 <body>
+
   <svg style="display: none">
     <symbol class="search-icon" id="search-icon">
       <path d="M 21 3 C 11.621094 3 4 10.621094 4 20 C 4 29.378906 11.621094 37 21 37 C 24.710938 37 28.140625 35.804688 30.9375 33.78125 L 44.09375 46.90625 L 46.90625 44.09375 L 33.90625 31.0625 C 36.460938 28.085938 38 24.222656 38 20 C 38 10.621094 30.378906 3 21 3 Z M 21 5 C 29.296875 5 36 11.703125 36 20 C 36 28.296875 29.296875 35 21 35 C 12.703125 35 6 28.296875 6 20 C 6 11.703125 12.703125 5 21 5 Z"/>
+    </symbol>
+    <symbol id="i-facebook">
+      <circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098"/>
+      <path style="fill:#FFFFFF;" d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z"/>
+    </symbol>
+    <symbol id="i-twitter">
+      <circle style="fill:#55ACEE;" cx="56.099" cy="56.098" r="56.098"/>
+      <path style="fill:#F1F2F2;" d="M90.461,40.316c-2.404,1.066-4.99,1.787-7.702,2.109c2.769-1.659,4.894-4.284,5.897-7.417
+			c-2.591,1.537-5.462,2.652-8.515,3.253c-2.446-2.605-5.931-4.233-9.79-4.233c-7.404,0-13.409,6.005-13.409,13.409
+			c0,1.051,0.119,2.074,0.349,3.056c-11.144-0.559-21.025-5.897-27.639-14.012c-1.154,1.98-1.816,4.285-1.816,6.742
+			c0,4.651,2.369,8.757,5.965,11.161c-2.197-0.069-4.266-0.672-6.073-1.679c-0.001,0.057-0.001,0.114-0.001,0.17
+			c0,6.497,4.624,11.916,10.757,13.147c-1.124,0.308-2.311,0.471-3.532,0.471c-0.866,0-1.705-0.083-2.523-0.239
+			c1.706,5.326,6.657,9.203,12.526,9.312c-4.59,3.597-10.371,5.74-16.655,5.74c-1.08,0-2.15-0.063-3.197-0.188
+			c5.931,3.806,12.981,6.025,20.553,6.025c24.664,0,38.152-20.432,38.152-38.153c0-0.581-0.013-1.16-0.039-1.734
+			C86.391,45.366,88.664,43.005,90.461,40.316L90.461,40.316z"/>
+    </symbol>
+    <symbol id="i-google">
+      <path d="m12 24c6.624 0 12-5.376 12-12s-5.376-12-12-12-12 5.376-12 12 5.376 12 12 12zm4.283-12.857h1.718v-1.717h1.718v1.718h1.703v1.718h-1.703v1.718h-1.718v-1.718h-1.718zm-3.687-3.581-1.626 1.578c-2.08-2.033-6.127-.552-6.127 2.855 0 4.621 6.559 4.937 7.128 1.2h-3.392v-2.061h5.657c.642 3.356-1.525 6.866-5.657 6.866v.001c-3.329 0-6.001-2.686-6.001-6.001.001-5.338 6.333-7.861 10.018-4.438z" fill="#f44336"/>
     </symbol>
   </svg>
 
@@ -316,7 +334,7 @@
     <div class="wrapper">
       <div class="container">
         <div class="content">
-          <section class="gallery">
+          <section class="gallery box">
             <h2 class="visually-hidden">Product gallery</h2>
             <div class="gallery__top swiper-container gallery-top">
               <button class="gallery__lightbox" data-lightbox-trigger aria-label="Lightbox trigger">
@@ -400,10 +418,362 @@
               <div class="gallery__btn gallery__btn--prev"></div>
               <div class="gallery__btn gallery__btn--next"></div>
             </div>
-            <div class="gallery__legend legend"></div>
+            <div class="gallery__legend legend">
+              <span class="legend__price">
+                $15
+              </span>
+              <ul class="legend__list">
+                <li class="legend__item legend__item--date">
+                  August 18, 2019 12:20 pm
+                </li>
+                <li class="legend__item legend__item--location">
+                  New York, Mineola
+                </li>
+                <li class="legend__item  legend__item--views">
+                  112 views
+                </li>
+              </ul>
+              <ul class="legend__tags">
+                <li class="legend__tag legend__tag--new">
+                  New
+                </li>
+                <li class="legend__tag legend__tag--featured">
+                  Featured
+                </li>
+              </ul>
+            </div>
+            <div class="gallery__tabs tabs">
+              <input
+                class="tabs__trigger tabs__trigger--1 visually-hidden"
+                name="tabs"
+                type="radio"
+                id="product-tab-1"
+                value="1"
+                checked
+              >
+              <label for="product-tab-1">
+                Details
+              </label>
+              <input
+                class="tabs__trigger tabs__trigger--2 visually-hidden"
+                name="tabs"
+                type="radio"
+                id="product-tab-2"
+                value="2"
+              >
+              <label for="product-tab-2">
+                Features
+              </label>
+              <div class="tabs__content tabs__content--1">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. In eu mi bibendum neque egestas congue quisque. At urna
+                  condimentum mattis pellentesque id nibh tortor. Aliquam eleifend mi in nulla posuere. Sed
+                  sed risus pretium quam vulputate. Sit amet dictum sit amet justo donec enim diam vulputate.
+                  Condimentum lacinia quis vel eros donec ac odio. Amet mauris commodo quis imperdiet massa
+                  tincidunt nunc pulvinar sapien. Id interdum velit laoreet id. Enim diam vulputate ut
+                  pharetra sit. Dictum sit amet justo donec enim diam vulputate. Vestibulum mattis ullamcorper
+                  velit sed ullamcorper morbi tincidunt ornare massa.
+                </p>
+                <p>
+                  Molestie a iaculis at erat pellentesque. Augue interdum velit euismod in. Aliquam id diam
+                  maecenas ultricies mi eget mauris pharetra et. Orci sagittis eu volutpat odio facilisis.
+                  Euismod nisi porta lorem mollis. Viverra accumsan in nisl nisi. Porttitor eget dolor morbi
+                  non arcu risus quis. Magna fringilla urna porttitor rhoncus dolor purus. Eget mi proin sed
+                  libero. Vitae justo eget magna fermentum iaculis eu non diam. Leo vel fringilla est
+                  ullamcorper eget nulla. Faucibus ornare suspendisse sed nisi lacus sed. Semper risus in
+                  hendrerit gravida rutrum. Urna cursus eget nunc scelerisque viverra mauris in. Fermentum
+                  posuere urna nec tincidunt.
+                </p>
+              </div>
+              <div class="tabs__content tabs__content--2">
+                <dl>
+                  <dt>Condition:</dt>
+                  <dd>Used</dd>
+                </dl>
+                <ul>
+                  <li>Lorem ipsum dummy text</li>
+                  <li>Lorem ipsum dummy text of the printing</li>
+                  <li>Dmply dummy text of the printing</li>
+                  <li>Lorem ipsum typesetting industry</li>
+                  <li>Lorem ipsum dummy text of the printing</li>
+                  <li>Dmply dummy text</li>
+                  <li>Dmply dummy amet</li>
+                  <li>Intact Box</li>
+                  <li>1 Year international warranty</li>
+                </ul>
+              </div>
+            </div>
+            <div class="gallery__controls controls">
+              <ul class="controls__list">
+                <li class="controls__item controls__item--fav">
+                  <a href="#" class="controls__link">
+                    Add to Favourites
+                  </a>
+                </li>
+                <li class="controls__item controls__item--report">
+                  <a href="#" class="controls__link">
+                    Report Abuse
+                  </a>
+                </li>
+              </ul>
+              <div class="controls__share">
+                <span class="controls__label">
+                  Share:
+                </span>
+                <ul class="controls__socials">
+                  <li class="controls__social controls__social--fb">
+                    <a href="" class="controls__social-link">
+                      Facebook
+                      <svg class="controls__icon" width="24" height="24" viewBox="0 0 112.196 112.196">
+                        <use xlink:href="#i-facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="controls__social controls__social--twitter">
+                    <a href="" class="controls__social-link">
+                      Twitter
+                      <svg class="controls__icon" width="24" height="24" viewBox="0 0 112.197 112.197">
+                        <use xlink:href="#i-twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="controls__social controls__social--google">
+                    <a href="" class="controls__social-link">
+                      Google
+                      <svg class="controls__icon" width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="#i-google"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="seller seller-mobile tablet-minus box">
+            <h2 class="block-title seller__title">
+              Seller information
+            </h2>
+            <div class="seller__wrapper">
+              <figure class="seller__brand">
+                <div class="seller__frame">
+                  <img src="assets/images/radius-logo.jpg" alt="Radius theme logo" class="seller__logo">
+                </div>
+                <figcaption class="seller__theme">
+                  <a class="seller__theme-link" href="#">
+                    Radius Theme
+                  </a>
+                </figcaption>
+              </figure>
+              <p class="seller__location">
+                New York, Mineola<br/>House#18, Road#07
+              </p>
+              <a href="#" class="seller__link">
+                View Store
+              </a>
+              <button class="seller__number" data-phone-trigger>
+                <span class="seller__phone" data-phone-number>6735568312</span>
+                <span class="seller__label" data-phone-label>Click to reveal phone number</span>
+              </button>
+              <a href="mailto:#" class="seller__mail">
+                Email to sender
+              </a>
+            </div>
+          </section>
+          <section class="map box">
+            <h2 class="block-title map__title">
+              Location
+            </h2>
+            <div class="map__wrapper" id="map">
+              <iframe class="map__content" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1496.8118831398408!2d-73.64157896984818!3d40.74920150807132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNew%20york%2C%20mineola%2C%2018!5e0!3m2!1sru!2sru!4v1579694133651!5m2!1sru!2sru" allowfullscreen=""></iframe>
+            </div>
+          </section>
+          <section class="related box">
+            <h2 class="block-title related__title">
+              Related Ads
+            </h2>
+            <button class="related__btn related__btn--prev" type="button"></button>
+            <button class="related__btn related__btn--next" type="button"></button>
+            <div class="related__wrapper">
+              <div class="swiper-container related__container">
+                <ul class="swiper-wrapper related__list">
+                  <li class="swiper-slide related__item">
+                    <a href="#" class="related__link">
+                      <img class="related__img" src="assets/images/related__img--1.jpg" alt="Related product">
+                      <div class="related__content">
+                        <h3 class="related__name related__name--new">
+                          HD 27 inch Mac 1 year used only
+                        </h3>
+                        <ul class="related__meta">
+                          <li class="related__meta-item related__meta-item--time">
+                            5 months ago
+                          </li>
+                          <li class="related__meta-item related__meta-item--location">
+                            Port Chester, New York
+                          </li>
+                        </ul>
+                        <p class="related__price">
+                          <span class="related__currency">$</span>2,500
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide related__item">
+                    <a href="#" class="related__link">
+                      <img class="related__img" src="assets/images/related__img--2.jpg" alt="Related product">
+                      <div class="related__content">
+                        <h3 class="related__name">
+                          Team Jersey available in reasonable price
+                        </h3>
+                        <ul class="related__meta">
+                          <li class="related__meta-item related__meta-item--time">
+                            6 months ago
+                          </li>
+                          <li class="related__meta-item related__meta-item--location">
+                            New Jersey, Bloomfield
+                          </li>
+                        </ul>
+                        <p class="related__price">
+                          <span class="related__currency">$</span>90
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide related__item">
+                    <a href="#" class="related__link">
+                      <img class="related__img" src="assets/images/related__img--3.jpg" alt="Related product">
+                      <div class="related__content">
+                        <h3 class="related__name">
+                          Running shoes imported from china
+                        </h3>
+                        <ul class="related__meta">
+                          <li class="related__meta-item related__meta-item--time">
+                            6 months ago
+                          </li>
+                          <li class="related__meta-item related__meta-item--location">
+                            California, Bakersfield
+                          </li>
+                        </ul>
+                        <p class="related__price">
+                          <span class="related__currency">$</span>36
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="swiper-slide related__item">
+                    <a href="#" class="related__link">
+                      <img class="related__img" src="assets/images/related__img--4.jpg" alt="Related product">
+                      <div class="related__content">
+                        <h3 class="related__name related__name--new">
+                          New Banded Smart Watch
+                        </h3>
+                        <ul class="related__meta">
+                          <li class="related__meta-item related__meta-item--time">
+                            5 months ago
+                          </li>
+                          <li class="related__meta-item related__meta-item--location">
+                            Kansas, Emporia
+                          </li>
+                        </ul>
+                        <p class="related__price">
+                          <span class="related__currency">$</span>47
+                        </p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="review box">
+            <h2 class="block-title review__title">
+              <span class="review__counter">1</span> Review
+              <span class="review__stars">5 stars</span>
+            </h2>
+            <div class="review__wrapper">
+              <img
+                src="https://secure.gravatar.com/avatar/1200c1ecc73e0c929e24138c7e7af5e0?s=100&d=mm&r=g"
+                alt="User avatar"
+                class="review__avatar"
+              >
+              <div class="review__content">
+                <div class="review__info">
+                  <p class="review__total">
+                    Overall good
+                  </p>
+                  <p class="review__name">
+                    John Doe
+                  </p>
+                  <p class="review__date">
+                    November 5, 2018 @1:04 pm
+                  </p>
+                </div>
+                <span class="review__stars">5 stars</span>
+                <div class="review__text">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
-        <aside class="aside"></aside>
+        <aside class="aside">
+          <div class="price">$15</div>
+          <div class="seller notebook-plus box">
+            <h2 class="block-title seller__title">
+              Seller information
+            </h2>
+            <div class="seller__wrapper">
+              <figure class="seller__brand">
+                <div class="seller__frame">
+                  <img src="assets/images/radius-logo.jpg" alt="Radius theme logo" class="seller__logo">
+                </div>
+                <figcaption class="seller__theme">
+                  <a class="seller__theme-link" href="#">
+                    Radius Theme
+                  </a>
+                </figcaption>
+              </figure>
+              <p class="seller__location">
+                New York, Mineola<br/>House#18, Road#07
+              </p>
+              <a href="#" class="seller__link">
+                View Store
+              </a>
+              <button class="seller__number" data-phone-trigger>
+                <span class="seller__phone" data-phone-number>6735568312</span>
+                <span class="seller__label" data-phone-label>Click to reveal phone number</span>
+              </button>
+              <a href="mailto:#" class="seller__mail">
+                Email to sender
+              </a>
+            </div>
+          </div>
+          <div class="tip box">
+            <h2 class="block-title tip__title">
+              Safety Tips for Buyers
+            </h2>
+            <ul class="tip__list">
+              <li class="tip__item">
+                Meet seller at a public place
+              </li>
+              <li class="tip__item">
+                Check The item before you buy
+              </li>
+              <li class="tip__item">
+                Pay only after collecting The item
+              </li>
+            </ul>
+          </div>
+          <div class="ad">
+            <a href="#" class="ad__link" target="_blank">
+              Link to advertise
+              <img src="assets/images/ad-banner.jpg" alt="Advertisement banner" class="ad__img">
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
   </main>
@@ -414,8 +784,15 @@
     if (window.NodeList && !NodeList.prototype.forEach) {
       NodeList.prototype.forEach = Array.prototype.forEach;
     }
+
+    const ua = window.navigator.userAgent;
+    const isIE = /MSIE|Trident/.test(ua);
+
+    if ( !isIE ) {
+      document.write('<script src="assets/libs/swiper.min.js"><\x2fscript>')
+      document.write('<link rel="stylesheet" type="text/css" href="assets/libs/swiper.min.css">')
+    }
   </script>
-  <script src="assets/libs/swiper.min.js"></script>
   <script src="assets/libs/lightbox.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>

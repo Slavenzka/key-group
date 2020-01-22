@@ -1,0 +1,57 @@
+/*! key-group-trial v0.0.1 | (c) 2020 YOUR NAME | MIT License | http://link-to-your-git-repo.com */
+/* line 4, src/sass/components/tip/tip.scss */
+.tip {
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+/* line 8, src/sass/components/tip/tip.scss */
+.tip__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #222;
+}
+
+/* line 12, src/sass/components/tip/tip.scss */
+.tip__list {
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+}
+
+/* line 18, src/sass/components/tip/tip.scss */
+.tip__item {
+  position: relative;
+  padding-left: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #646464;
+}
+
+/* line 23, src/sass/components/tip/tip.scss */
+.tip__item::before {
+  content: "\f105";
+  position: absolute;
+  top: calc(50% - 18px / 2);
+  left: 0;
+  font-family: "Font Awesome", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #e43d40;
+}
+
+/* line 34, src/sass/components/tip/tip.scss */
+.tip__item:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+  /* line 41, src/sass/components/tip/tip.scss */
+  .tip {
+    margin-top: 30px;
+  }
+}

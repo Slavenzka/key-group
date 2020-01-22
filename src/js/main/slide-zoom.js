@@ -21,9 +21,6 @@
       const image = item.querySelector('[data-product-image]');
 
       image.addEventListener('mouseenter', function (evt) {
-        image.style.transform = 'Scale(1.2)';
-        image.style.transitionDuration = '0.5s';
-        image.style.transitionProperty = 'transform';
         image.style.top = '0';
         image.style.left = '0';
 
@@ -39,10 +36,8 @@
         image.addEventListener('mousemove', handleMove);
 
         image.addEventListener('mouseleave', function () {
-          image.style.transform = 'Scale(1)';
           image.style.top = '0';
           image.style.left = '0';
-          image.style.transitionProperty = 'transform, left, top';
 
           image.removeEventListener('mousemove', handleMove);
         });

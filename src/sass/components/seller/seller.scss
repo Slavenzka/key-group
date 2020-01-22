@@ -1,0 +1,140 @@
+@import "../../variables";
+@import "../../mixins";
+
+.seller {
+  background-color: $colorLightest;
+
+  &-mobile {
+    margin-top: 40px;
+  }
+
+  &__wrapper {
+    padding: 30px;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  &__logo {
+    width: 70px;
+  }
+
+  &__theme-link {
+    margin-left: 10px;
+    @include h3;
+  }
+
+  &__location {
+    position: relative;
+    padding-left: 25px;
+    @include fontLabel;
+
+    &::before {
+      content: "\f041";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 25px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    padding-left: 25px;
+    @include fontLabel;
+
+    &::before {
+      content: "\f291";
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 25px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 14px;
+      line-height: 1;
+    }
+  }
+
+  &__number {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px 10px 43px;
+    width: 100%;
+    background-color: $colorButtonBg;
+    border: none;
+    outline: none;
+  }
+
+  &__phone {
+    position: relative;
+    display: block;
+    @include fontRegularBold;
+    text-align: left;
+
+    &::before {
+      content: "\f095";
+      position: absolute;
+      top: 4px;
+      left: -23px;
+      width: 23px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: $colorHighlightDark;
+    }
+  }
+
+  &__label {
+    display: block;
+    @include fontLabel;
+    font-size: 12.8px;
+    text-align: left;
+  }
+
+  &__mail {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    @include fontRegularBold($colorLightest);
+    font-weight: 500;
+    background-color: $colorDarker2;
+
+    &::before {
+      content: "\f0e0";
+      margin-right: 16px;
+      width: 16px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: $colorHighlightDark;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .seller {
+    &__wrapper {
+      padding: 20px;
+    }
+  }
+}

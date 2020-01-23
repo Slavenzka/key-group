@@ -776,6 +776,9 @@
         </aside>
       </div>
     </div>
+    <div data-task-container>
+
+    </div>
   </main>
   <footer>Footer content</footer>
 
@@ -795,5 +798,77 @@
   </script>
   <script src="assets/libs/lightbox.min.js"></script>
   <script src="js/main.min.js"></script>
+  <script>
+    {
+      // Helper function with animation execution callbacks
+      function animate({timing, draw, duration}) {
+
+        let start = performance.now();
+
+        requestAnimationFrame(function animate(time) {
+          // timeFraction изменяется от 0 до 1
+          let timeFraction = (time - start) / duration;
+          if (timeFraction > 1) timeFraction = 1;
+
+          // вычисление текущего состояния анимации
+          let progress = timing(timeFraction);
+
+          draw(progress); // отрисовать её
+
+          if (timeFraction < 1) {
+            requestAnimationFrame(animate);
+          }
+
+        });
+      }
+
+      // Creation, styling of slide and tuning of envoked animation helper function
+      function animateSlide (imgSrc) {
+        const newImg = document.createElement('img');
+        newImg.setAttribute('src', imgSrc);
+        newImg.setAttribute('data-slide-image', true);
+        newImg.style.width = '100%';
+        newImg.style.height = '100%';
+        newImg.style.objectFit = 'cover';
+        newImg.style.position = 'absolute';
+        newImg.style.left = '100%';
+        newImg.style.top = '0';
+        container.appendChild(newImg);
+
+        animate({
+          duration: 500,
+          timing(timeFraction) {
+            return timeFraction;
+          },
+          draw(progress) {
+            newImg.style.left = 100 - progress * 100 + '%';
+            if (progress === 1 && container.querySelectorAll('[data-slide-image]').length > 1) {
+              container.querySelectorAll('[data-slide-image]')[0].remove();
+            }
+          }
+        });
+      }
+
+      // I use an array of src link as raw input data for the task
+      const images = [...document.querySelectorAll('[data-product-image]')].map(item => item.src);
+      // Creation and basic styles of slider container
+      const container = document.querySelector('[data-task-container]');
+      container.style.width = '400px';
+      container.style.height = '250px';
+      container.style.position = 'relative';
+      container.style.margin = '0 auto';
+      container.style.overflow = 'hidden';
+      let slideCounter = 1;
+
+      // First animation on page load
+      animateSlide(images[0]);
+
+      // Interval animations after initial one with counter change
+      setInterval(() => {
+        animateSlide(images[slideCounter]);
+        slideCounter = slideCounter === images.length - 1 ? 0 : slideCounter + 1;
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
